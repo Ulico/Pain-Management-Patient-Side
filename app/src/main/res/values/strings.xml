@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Pain Management</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="help">Help</string>
+    <string name="logo">logo</string>
+    <string name="enter_security_pin">Enter security PIN:</string>
+    <string name="pin">PIN</string>
+    <string name="enter">Enter</string>
+    <string name="patients">Patients</string>
+    <string name="messages">Messages</string>
+    <string name="account">Account</string>
+    <string name="logout">Logout</string>
+    <string name="homescreen">Homescreen</string>
+    <string name="welcome">Welcome!</string>
+    <string name="help_section">Help Section</string>
+    <string name="return_to_login_page">Return to Login Page</string>
+    <string name="messages_go_here">Messages Go Here</string>
+    <string name="home_button">Home Button</string>
+    <string name="select_patient_name">Select Patient Name</string>
+    <string name="type_patient_name">Type patient name</string>
+    <string name="patient_name">Patient Name</string>
+    <string name="age">Age</string>
+    <string name="status">Status</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="data">Data</string>
+</resources>
