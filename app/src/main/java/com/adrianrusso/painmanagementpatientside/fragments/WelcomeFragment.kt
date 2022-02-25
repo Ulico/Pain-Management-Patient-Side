@@ -1,10 +1,12 @@
 package com.adrianrusso.painmanagementpatientside.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.adrianrusso.painmanagementpatientside.activites.DailyLog
 import com.adrianrusso.painmanagementpatientside.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
@@ -14,6 +16,18 @@ class WelcomeFragment : Fragment() {
     ): View {
 
         val binding = FragmentWelcomeBinding.inflate(inflater, container, false)
+
+
+        binding.completeCheckInButton.setOnClickListener {
+            startActivity(
+                Intent(
+                    activity,
+                    DailyLog::class.java
+                )
+            )
+        }
+
         return binding.root
     }
+
 }

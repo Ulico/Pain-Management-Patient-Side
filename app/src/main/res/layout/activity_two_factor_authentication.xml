@@ -42,6 +42,7 @@
         android:layout_below="@id/pin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
+        style="?android:attr/buttonBarButtonStyle"
         android:onClick="onPinEnter"
         android:text="@string/enter" />
 
