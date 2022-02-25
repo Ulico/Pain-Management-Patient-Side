@@ -13,7 +13,7 @@ class TwoFactorAuthentication : AppCompatActivity() {
     }
 
     fun onPinEnter(view: View) {
-        val intent = Intent(this, Homescreen::class.java)
+        val intent = Intent(this, NavigationActivity::class.java)
         startActivity(intent)
     }
 }
