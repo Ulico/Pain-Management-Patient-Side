@@ -12,7 +12,7 @@
         android:layout_height="170dp"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/logo"
-        app:srcCompat="@drawable/logo" />
+        android:src="@drawable/logo" />
 
     <EditText
         android:id="@+id/username"
