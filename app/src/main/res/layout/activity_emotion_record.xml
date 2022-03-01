@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activites.EmotionRecordActivity">
+
+    <TextView
+        android:id="@+id/emotionRecordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Emotion Record"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/chartImage"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/emotionRecordText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/feelQuestionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chartImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="How do you feel today?"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@+id/sliderLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/feelQuestionText"
+        android:layout_centerHorizontal="true">
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/feelSlider"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+
+            android:stepSize="1"
+            android:value="5"
+            android:valueFrom="0"
+            android:valueTo="10" />
+
+        <TextView
+            android:id="@+id/emotionRatingText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:text="5/10"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/treatmentsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sliderLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="What treatment(s) have you tried today?"
+        android:textSize="16sp" />
+
+
+    <Spinner
+        android:id="@+id/treatmentsSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/treatmentsText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:tooltipText="" />
+
+    <TextView
+        android:id="@+id/activitesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/treatmentsSpinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="What activity(s) have you tried today?"
+        android:textSize="16sp" />
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activitesText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:tooltipText="" />
+
+
+</RelativeLayout>

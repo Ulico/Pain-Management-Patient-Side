@@ -10,10 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PainManagementPatientSide">
         <activity
-            android:name=".activites.DailyLog"
-            android:exported="false"
-            android:label="Daily Log"
-            android:theme="@style/Theme.PainManagementPatientSide.NoActionBar" />
+            android:name=".activites.AddMedicationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activites.MedicationRecordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activites.EmotionRecordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activites.CheckinActivity"
+            android:exported="false" />
         <activity
             android:name=".activites.NavigationActivity"
             android:exported="false" />

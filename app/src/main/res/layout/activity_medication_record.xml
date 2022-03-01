@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activites.MedicationRecordActivity">
+
+    <TextView
+        android:id="@+id/medicationRecordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Medication Record"
+        android:textSize="18sp" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/medicationRecordText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" >
+    </androidx.viewpager.widget.ViewPager>
+
+    <Button
+        android:id="@+id/addNewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/horizontalScrollView"
+        android:layout_alignEnd="@id/horizontalScrollView"
+        android:text="Add new" />
+
+    <TextView
+        android:id="@+id/treatmentQuestionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addNewButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Have you finished your treatment today?"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/treatmentQuestionText"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/additionalNotesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkBox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Additional Notes"
+        android:textSize="16sp" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/additionalNotesText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/notesInput"
+        android:autofillHints="name"
+        android:hint="Type something..."
+        android:inputType="text" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:onClick="onSubmit"
+        android:text="Submit"
+        android:layout_below="@id/notesInput"/>
+
+
+</RelativeLayout>

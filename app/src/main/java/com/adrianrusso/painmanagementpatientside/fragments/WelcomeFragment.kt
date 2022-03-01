@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.adrianrusso.painmanagementpatientside.activites.DailyLog
+import com.adrianrusso.painmanagementpatientside.activites.CheckinActivity
 import com.adrianrusso.painmanagementpatientside.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
@@ -22,7 +22,7 @@ class WelcomeFragment : Fragment() {
             startActivity(
                 Intent(
                     activity,
-                    DailyLog::class.java
+                    CheckinActivity::class.java
                 )
             )
         }
