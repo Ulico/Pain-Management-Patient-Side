@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activites.BodyDiagramActivity">
+
+    <TextView
+        android:id="@+id/painLocationText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:text="Where is your pain location?"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:id="@+id/bodyDiagram"
+        android:layout_below="@id/painLocationText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/bodydiagram" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:text="Submit"
+        android:layout_marginTop="50dp"
+        android:onClick="onSubmit"
+        android:layout_below="@id/bodyDiagram"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/circle"
+
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/circle"
+        android:visibility="invisible" />
+
+</RelativeLayout>

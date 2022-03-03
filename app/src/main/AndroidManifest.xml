@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PainManagementPatientSide">
         <activity
+            android:name=".activites.BodyDiagramActivity"
+            android:exported="false" />
+        <activity
             android:name=".activites.AddMedicationActivity"
             android:exported="false" />
         <activity
