@@ -44,7 +44,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun onLogIn(view: View) {
         if (binding.username.text.isEmpty() || binding.password.text.isEmpty()) {
             Snackbar.make(
@@ -68,15 +67,15 @@ class MainActivity : AppCompatActivity() {
 
                 AppUser.mdbUser = user!!
 //        var s = DateTimeFormatter.ISO_INSTANT.format(Instant.now())
-                AppUser.sendSubmission(
-                    Submission(
-                        DateTimeFormatter.ISO_INSTANT.format(Instant.now()),
-                        listOf("test", "test2"),
-                        listOf("test", "test2"),
-                        listOf("test", "test2"),
-                        "Notes"
-                    )
-                )
+//                AppUser.sendSubmission(
+//                    Submission(
+//                        DateTimeFormatter.ISO_INSTANT.format(Instant.now()),
+//                        listOf("test", "test2"),
+//                        listOf("test", "test2"),
+//                        listOf("test", "test2"),
+//                        "Notes"
+//                    )
+//                )
 
 
                 val intent = Intent(this, TwoFactorAuthentication::class.java)

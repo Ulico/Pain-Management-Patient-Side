@@ -18,7 +18,7 @@
     <ImageView
         android:id="@+id/chartImage"
         android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_height="160dp"
         android:layout_below="@id/painManagementText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp" />
@@ -52,39 +52,52 @@
             android:valueTo="10" />
 
         <TextView
+            android:id="@+id/painLevelRatingText"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="10dp"
             android:text="5/10"
-            android:id="@+id/painLevelRatingText"
             android:textSize="20sp" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sliderLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:onClick="onSubmit"
+        android:text="Submit" />
 
 
     <Button
         android:id="@+id/bodyDiagramButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/sliderLayout"
+        android:layout_below="@id/submitButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
+        android:onClick="onBodyDiagram"
         android:text="Body diagram" />
 
     <Button
         android:id="@+id/medicationButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onMedication"
         android:layout_below="@id/bodyDiagramButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:text="Medication" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/medicationButton"
+        android:onClick="onLifeRecord"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:text="Life record" />
 
 </RelativeLayout>
