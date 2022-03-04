@@ -34,5 +34,6 @@ class EmotionRecordActivity : AppCompatActivity() {
         s.feelLevel = binding.feelSlider.value.toInt()
         AppUser.sendSubmission(s)
 
+        finish()
     }
 }

@@ -3,18 +3,26 @@ package com.adrianrusso.painmanagementpatientside.activites
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.adrianrusso.painmanagementpatientside.databinding.ActivityMainBinding
 import com.adrianrusso.painmanagementpatientside.models.AppUser
+import com.adrianrusso.painmanagementpatientside.models.Medication
 import com.adrianrusso.painmanagementpatientside.models.Submission
 import com.google.android.material.snackbar.Snackbar
+import com.google.gson.Gson
 import io.realm.Realm
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
 import io.realm.mongodb.Credentials
 import io.realm.mongodb.User
+import io.realm.mongodb.mongo.MongoClient
+import io.realm.mongodb.mongo.MongoCollection
+import io.realm.mongodb.mongo.MongoDatabase
+import org.bson.Document
+import org.bson.types.ObjectId
 import java.time.Instant
 import java.time.format.DateTimeFormatter
 
@@ -64,18 +72,56 @@ class MainActivity : AppCompatActivity() {
             if (it.isSuccess) {
                 user = taskApp.currentUser()
 
+                AppUser.loadInfo(user!!)
 
-                AppUser.mdbUser = user!!
-//        var s = DateTimeFormatter.ISO_INSTANT.format(Instant.now())
-//                AppUser.sendSubmission(
-//                    Submission(
-//                        DateTimeFormatter.ISO_INSTANT.format(Instant.now()),
-//                        listOf("test", "test2"),
-//                        listOf("test", "test2"),
-//                        listOf("test", "test2"),
-//                        "Notes"
+
+//                val mongoClient: MongoClient =
+//                    user?.getMongoClient("mongodb-atlas")!! // service for MongoDB Atlas cluster containing custom user data
+//                val mongoDatabase: MongoDatabase =
+//                    mongoClient.getDatabase("pain-management-database")!!
+//                val mongoCollection: MongoCollection<Document> =
+//                    mongoDatabase.getCollection("users-info")!!
+//                mongoCollection.insertOne(
+//                    Document("_id", user!!.id).append(
+//                        "medications",
+//                        listOf(
+//                            Document.parse(
+//                                Gson().toJson(
+//                                    Medication(
+//                                        "name1",
+//                                        "purpose1",
+//                                        "dose1",
+//                                        "instruction1"
+//                                    )
+//                                )
+//                            ),
+//                            Document.parse(
+//                                Gson().toJson(
+//                                    Medication(
+//                                        "name2",
+//                                        "purpose2",
+//                                        "dose2",
+//                                        "instruction2"
+//                                    )
+//                                )
+//                            )
+//                        )
 //                    )
 //                )
+//                    .getAsync { result ->
+//                        if (result.isSuccess) {
+//                            Log.v(
+//                                "EXAMPLE",
+//                                "Inserted custom user data document. _id of inserted document: ${result.get().insertedId}"
+//                            )
+//
+//                        } else {
+//                            Log.e(
+//                                "EXAMPLE",
+//                                "Unable to insert custom user data. Error: ${result.error}"
+//                            )
+//                        }
+//                    }
 
 
                 val intent = Intent(this, TwoFactorAuthentication::class.java)

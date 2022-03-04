@@ -49,6 +49,6 @@ class BodyDiagramActivity : AppCompatActivity() {
         s.painCoordinates = painLocation
         AppUser.sendSubmission(s)
 
-        startActivity(Intent(this, CheckinActivity::class.java))
+        finish()
     }
 }
