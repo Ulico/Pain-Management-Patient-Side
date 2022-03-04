@@ -124,7 +124,7 @@ class MainActivity : AppCompatActivity() {
 //                    }
 
 
-                val intent = Intent(this, TwoFactorAuthentication::class.java)
+                val intent = Intent(this, NavigationActivity::class.java)
                 startActivity(intent)
             } else {
                 it.error.errorMessage?.let { it1 ->
@@ -136,5 +136,9 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onBackPressed() {
+        return
     }
 }
