@@ -10,6 +10,7 @@ import com.adrianrusso.painmanagementpatientside.databinding.ActivityCheckinBind
 import com.adrianrusso.painmanagementpatientside.models.AppUser
 import com.adrianrusso.painmanagementpatientside.models.Submission
 import com.google.android.material.slider.Slider
+import com.google.android.material.snackbar.Snackbar
 
 
 class CheckinActivity : AppCompatActivity() {
@@ -36,6 +37,9 @@ class CheckinActivity : AppCompatActivity() {
     fun onSubmit(view: View) {
         val s = Submission()
         s.painLevel = binding.painSlider.value.toInt()
+
+        Snackbar.make(view, "Pain level submitted", Snackbar.LENGTH_SHORT).show()
+
         AppUser.sendSubmission(s)
 
     }
