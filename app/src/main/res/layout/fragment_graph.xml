@@ -53,24 +53,28 @@
             android:text="Summary:" />
 
         <TextView
+            android:id="@+id/painLocationText"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginStart="40dp"
             android:text="Most common pain location:" />
 
         <TextView
+            android:id="@+id/commonTreatmentText"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginStart="40dp"
             android:text="Most common treatment used:" />
 
         <TextView
+            android:id="@+id/alternativeTreatmentText"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginStart="40dp"
             android:text="Alternative treatment used:" />
 
         <TextView
+            android:id="@+id/notesText"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginStart="40dp"

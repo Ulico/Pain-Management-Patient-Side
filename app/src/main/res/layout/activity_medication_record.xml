@@ -21,16 +21,15 @@
         android:layout_height="200dp"
         android:layout_below="@id/medicationRecordText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" >
-    </androidx.viewpager.widget.ViewPager>
+        android:layout_marginTop="20dp"></androidx.viewpager.widget.ViewPager>
 
     <Button
         android:id="@+id/addNewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/horizontalScrollView"
-        android:onClick="onAddNew"
         android:layout_alignEnd="@id/horizontalScrollView"
+        android:onClick="onAddNew"
         android:text="Add new" />
 
     <TextView
@@ -61,24 +60,24 @@
         android:textSize="16sp" />
 
     <EditText
+        android:id="@+id/notesInput"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/additionalNotesText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:id="@+id/notesInput"
-        android:autofillHints="name"
         android:hint="Type something..."
+        android:importantForAutofill="no"
         android:inputType="text" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/notesInput"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:onClick="onSubmit"
-        android:text="Submit"
-        android:layout_below="@id/notesInput"/>
+        android:text="Submit" />
 
 
 </RelativeLayout>

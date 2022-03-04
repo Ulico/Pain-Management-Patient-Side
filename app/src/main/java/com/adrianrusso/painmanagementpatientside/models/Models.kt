@@ -10,15 +10,21 @@ import io.realm.mongodb.mongo.MongoCollection
 import io.realm.mongodb.mongo.MongoDatabase
 import org.bson.Document
 import org.bson.types.ObjectId
+import java.lang.NullPointerException
 import java.time.Instant
 import java.time.format.DateTimeFormatter
 
 object AppUser {
     var name: String = ""
     var age: Int = 0
-    val status: Boolean = false
-    val providerName: String = ""
+    var status: Boolean = false
+    var providerName: String = ""
     var medications: MutableList<Medication> = mutableListOf()
+    var painLocations: List<String> = mutableListOf()
+    var commonTreatments: List<String> = mutableListOf()
+    var alternativeTreatments: List<String> = mutableListOf()
+    var activities: List<String> = mutableListOf()
+    var notes: String = ""
 
     lateinit var mdbUser: User
 
@@ -64,17 +70,28 @@ object AppUser {
 //        val mongoCollection: MongoCollection<Document> =
 //            mongoDatabase.getCollection("users-info")!!
         val customUserData: Document? = user.customData
+
         require(customUserData != null)
 //        name = customUserData["name"] as String
-//        Log.d("Models", customUserData.toString())
-        medications = (customUserData["medications"] as MutableList<Document>).map {
-            Medication(
-                it["name"] as String, it["purpose"] as String, it["dose"] as String,
-                it["instruction"] as String
-            )
-        }.toMutableList()
-        for (m in medications) {
-            Log.d("Models", m.toString())
+        Log.d("Models", customUserData.toString())
+        try {
+            medications = (customUserData["medications"] as MutableList<Document>).map {
+                Medication(
+                    it["name"] as String, it["purpose"] as String, it["dose"] as String,
+                    it["instruction"] as String
+                )
+            }.toMutableList()
+            name = customUserData["name"] as String
+            age = customUserData["age"] as Int
+            status = customUserData["status"] as Boolean
+            providerName = customUserData["provider_name"] as String
+            painLocations = customUserData["pain_locations"] as List<String>
+            commonTreatments = customUserData["common_treatments"] as List<String>
+            alternativeTreatments = customUserData["alternative_treatments"] as List<String>
+            activities = customUserData["activites"] as List<String>
+            notes = customUserData["notes"] as String
+        } catch (e: NullPointerException) {
+            Log.e("Models", e.toString())
         }
 //        for (medication in medicationList) {
 //            mongoCollection.findOne(Document("_id", patientId))
@@ -143,7 +160,9 @@ class Submission {
     var notes: String? = null
     var painLevel: Int? = null
     var feelLevel: Int? = null
+    var activity: String? = null
     var painCoordinates: Pair<Float, Float>? = null
+    var finishedMedications: Boolean? = null
 }
 
 data class Medication(
