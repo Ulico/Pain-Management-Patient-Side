@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.adrianrusso.painmanagementpatientside.activites.AddMedicationActivity
 import com.adrianrusso.painmanagementpatientside.activites.CheckinActivity
 import com.adrianrusso.painmanagementpatientside.databinding.FragmentWelcomeBinding
 import com.adrianrusso.painmanagementpatientside.models.AppUser
@@ -26,6 +27,15 @@ class WelcomeFragment : Fragment() {
                 Intent(
                     activity,
                     CheckinActivity::class.java
+                )
+            )
+        }
+
+        binding.addTreatmentButton.setOnClickListener {
+            startActivity(
+                Intent(
+                    activity,
+                    AddMedicationActivity::class.java
                 )
             )
         }

@@ -7,27 +7,26 @@
     tools:context=".activites.CheckinActivity">
 
     <TextView
-        android:id="@+id/painManagementText"
+        android:id="@+id/dailySurveyText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:text="Pain Management"
-        android:textSize="18sp" />
+        android:text="Daily Survey"
+        android:textSize="48sp" />
 
     <ImageView
-        android:id="@+id/chartImage"
-        android:layout_width="300dp"
-        android:layout_height="160dp"
-        android:layout_below="@id/painManagementText"
+        android:id="@+id/bodyDiagram"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_below="@id/dailySurveyText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
+        android:src="@drawable/bodydiagram" />
 
     <TextView
         android:id="@+id/painLevelQuestionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/chartImage"
+        android:layout_below="@+id/bodyDiagram"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="What is your pain level today?"
@@ -65,39 +64,55 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/sliderLayout"
+
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#F44336"
         android:onClick="onSubmit"
         android:text="Submit" />
 
-
-    <Button
-        android:id="@+id/bodyDiagramButton"
+    <TextView
+        android:id="@+id/addMoreInformationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/submitButton"
+        android:layout_below="@+id/submitButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:onClick="onBodyDiagram"
-        android:text="Body diagram" />
+        android:text="Add more information"
+        android:textSize="16sp" />
 
     <Button
-        android:id="@+id/medicationButton"
+        android:id="@+id/painDescriptionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onMedication"
-        android:layout_below="@id/bodyDiagramButton"
+        android:layout_below="@id/addMoreInformationText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:text="Medication" />
+        android:onClick="onPainDescription"
+        android:text="Pain description" />
+
 
     <Button
+        android:id="@+id/treatmentStrategiesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/medicationButton"
-        android:onClick="onLifeRecord"
+        android:layout_below="@id/painDescriptionButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:text="Life record" />
+        android:text="Treatment Strategies" />
+
+    <Button
+        android:id="@+id/externalFactors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/treatmentStrategiesButton"
+        android:layout_centerHorizontal="true"
+        android:onClick="onExternalFactors"
+        android:text="External Factors" />
+
+    <ImageView
+        android:id="@+id/circle"
+
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/circle"
+        android:visibility="invisible" />
 
 </RelativeLayout>

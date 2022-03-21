@@ -36,8 +36,9 @@ object AppUser {
             mongoClient.getDatabase("pain-management-database")!!
         val mongoCollection: MongoCollection<Document> =
             mongoDatabase.getCollection("users-info")!!
-
+        Log.d("TEST", s.painDescriptors.toString())
         mongoCollection.insertOne(
+
             Document.parse(Gson().toJson(s)).append("user_id", mdbUser.id).append(
                 "timestamp",
                 DateTimeFormatter.ISO_INSTANT.format(
@@ -162,6 +163,14 @@ class Submission {
     var feelLevel: Int? = null
     var activity: String? = null
     var painCoordinates: Pair<Float, Float>? = null
+    var painInterferenceWithGeneralActivities: Int? = null
+    var painInterferenceWithEnjoyment: Int? = null
+    var painDescriptors: List<String>? = null
+    var painTriggers: List<String>? = null
+    var painDuration: Int? = null
+    var painTimeOfDay: List<String>? = null
+    var painLocationOfPatient: List<String>? = null
+    var painOtherSymptoms: List<String>? = null
     var finishedMedications: Boolean? = null
 }
 

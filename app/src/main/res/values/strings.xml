@@ -125,4 +125,9 @@
     <string name="action_settings">Settings</string>
     <string name="what_is_your_pain_level">What is your pain level?</string>
     <string name="_5_10">5/10</string>
+    <string name="title_activity_pain_description">PainDescriptionActivity</string>
+    <string name="title_activity_pain_description_scrolling">PainDescriptionScrollingActivity
+    </string>
+    <string name="title_activity_external_factors_scrolling">ExternalFactorsScrollingActivity
+    </string>
 </resources>

@@ -29,11 +29,6 @@ class ProfileFragment : Fragment() {
         "Full Patient Name: ${AppUser.name}".also { binding.fullPatientNameText.text = it }
 
         "Provider Name: ${AppUser.providerName}".also { binding.providerNameText.text = it }
-        "Primary pain location: ${AppUser.painLocations[0]}".also {
-            binding.primaryPainLocation.text = it
-        }
-        "Other pain location: ${AppUser.painLocations[1]}".also { binding.otherPainLocation.text = it }
-        "Other pain location: ${AppUser.painLocations[2]}".also { binding.otherPainLocation2.text = it }
 
         return binding.root
     }

@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.MainActivity">
+    tools:context=".activites.SignUpActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="148dp"
-        android:layout_height="170dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/createAccountText"
+        android:text="Create Account:"
         android:layout_centerHorizontal="true"
-        android:contentDescription="@string/logo"
-        android:src="@drawable/logo" />
+        android:layout_marginTop="40dp"
+        android:textSize="24sp"/>
 
     <EditText
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/createAccountText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
         android:autofillHints="username"
@@ -38,27 +40,16 @@
         android:hint="@string/password"
         android:inputType="textPassword" />
 
-
-    <Button
-        android:id="@+id/loginButton"
-        style="?android:attr/buttonBarButtonStyle"
+    <EditText
+        android:id="@+id/confirmPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
+        android:layout_below="@id/password"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:onClick="onLogIn"
-        android:text="@string/log_in" />
-
-    <Button
-        android:id="@+id/signUpButton"
-        style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/loginButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:onClick="onSignUp"
-        android:text="Sign Up" />
+        android:layout_marginTop="10dp"
+        android:autofillHints="password"
+        android:ems="10"
+        android:hint="Confirm password"
+        android:inputType="textPassword" />
 
 </RelativeLayout>

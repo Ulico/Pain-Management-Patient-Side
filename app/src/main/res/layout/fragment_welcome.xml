@@ -68,10 +68,20 @@
 
     <Button
         android:layout_width="wrap_content"
+        android:id="@+id/messageProviderButton"
         android:layout_height="wrap_content"
         android:layout_below="@id/completeCheckInButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:text="@string/message_provider" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/addTreatmentButton"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/messageProviderButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Add Treatment" />
 
 </RelativeLayout>

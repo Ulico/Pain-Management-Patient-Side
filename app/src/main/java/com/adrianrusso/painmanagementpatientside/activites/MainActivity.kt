@@ -1,30 +1,17 @@
 package com.adrianrusso.painmanagementpatientside.activites
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.adrianrusso.painmanagementpatientside.databinding.ActivityMainBinding
 import com.adrianrusso.painmanagementpatientside.models.AppUser
-import com.adrianrusso.painmanagementpatientside.models.Medication
-import com.adrianrusso.painmanagementpatientside.models.Submission
 import com.google.android.material.snackbar.Snackbar
-import com.google.gson.Gson
 import io.realm.Realm
 import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
 import io.realm.mongodb.Credentials
 import io.realm.mongodb.User
-import io.realm.mongodb.mongo.MongoClient
-import io.realm.mongodb.mongo.MongoCollection
-import io.realm.mongodb.mongo.MongoDatabase
-import org.bson.Document
-import org.bson.types.ObjectId
-import java.time.Instant
-import java.time.format.DateTimeFormatter
 
 lateinit var taskApp: App
 const val appID = "test_app-svywj"
@@ -140,5 +127,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         return
+    }
+
+    fun onSignUp(view: View) {
+        startActivity(Intent(this, SignUpActivity::class.java))
     }
 }

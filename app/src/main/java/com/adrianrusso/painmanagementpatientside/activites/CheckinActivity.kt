@@ -1,9 +1,11 @@
 package com.adrianrusso.painmanagementpatientside.activites
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
 import androidx.annotation.RequiresApi
 import com.adrianrusso.painmanagementpatientside.databinding.ActivityCheckinBinding
@@ -15,7 +17,9 @@ import com.google.android.material.snackbar.Snackbar
 
 class CheckinActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCheckinBinding
+    private var painLocation: Pair<Float, Float> = Pair(0F, 0F)
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCheckinBinding.inflate(layoutInflater)
@@ -27,10 +31,19 @@ class CheckinActivity : AppCompatActivity() {
                 binding.painLevelRatingText.text = it
             }
         })
-    }
 
-    fun onBodyDiagram(view: View) {
-        startActivity(Intent(this, BodyDiagramActivity::class.java))
+        binding.bodyDiagram.setOnTouchListener { p0, p1 ->
+            if (p1.action == MotionEvent.ACTION_DOWN) {
+                require(p1 != null)
+
+                painLocation = Pair(p1.x.div(p0.width), p1.y.div(p0.height))
+
+                binding.circle.visibility = View.VISIBLE
+                binding.circle.x = p1.x - (binding.circle.width * 2) / 3
+                binding.circle.y = p1.y + (binding.circle.height * 2)
+            }
+            true
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -39,15 +52,16 @@ class CheckinActivity : AppCompatActivity() {
         s.painLevel = binding.painSlider.value.toInt()
 
         Snackbar.make(view, "Pain level submitted", Snackbar.LENGTH_SHORT).show()
-
+        s.painCoordinates = painLocation
         AppUser.sendSubmission(s)
 
     }
 
-    fun onLifeRecord(view: View) {
-        startActivity(Intent(this, EmotionRecordActivity::class.java))
+    fun onPainDescription(view: View) {
+        startActivity(Intent(this, PainDescriptionScrollingActivity::class.java))
     }
-    fun onMedication(view: View) {
-        startActivity(Intent(this, MedicationRecordActivity::class.java))
+
+    fun onExternalFactors(view: View) {
+        startActivity(Intent(this, ExternalFactorsScrollingActivity::class.java))
     }
 }

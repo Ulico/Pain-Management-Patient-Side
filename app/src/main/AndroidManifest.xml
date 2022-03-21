@@ -10,7 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PainManagementPatientSide">
         <activity
-            android:name=".activites.BodyDiagramActivity"
+            android:name=".activites.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activites.ExternalFactorsScrollingActivity"
+            android:exported="false"
+            android:label="Daily Survey"
+            android:theme="@style/Theme.PainManagementPatientSide.NoActionBar" />
+        <activity
+            android:name=".activites.PainDescriptionScrollingActivity"
+            android:exported="false"
+            android:label="Daily Survey"
+            android:theme="@style/Theme.PainManagementPatientSide.NoActionBar" />
+        <activity
+            android:name=".activites.ProviderSettingsActivity"
             android:exported="false" />
         <activity
             android:name=".activites.AddMedicationActivity"

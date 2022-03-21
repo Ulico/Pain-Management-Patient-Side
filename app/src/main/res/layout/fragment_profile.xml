@@ -44,36 +44,54 @@
         android:textSize="15sp" />
 
 
-    <TextView
-        android:id="@+id/primaryPainLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/providerNameText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Primary pain location:"
-        android:textSize="15sp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:id="@+id/providerSettingsText"
+        android:text="Provider Settings"
+        android:layout_below="@id/providerNameText"
+        android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/otherPainLocation"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/medicationSettingsButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/primaryPainLocation"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Other pain location:"
-        android:textSize="15sp" />
+        android:layout_below="@id/providerSettingsText"
+        android:layout_marginHorizontal="20dp"
+        android:text="Medication Settings" />
 
-    <TextView
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/customizeDailySurveyButton"
+        android:layout_marginHorizontal="20dp"
+        android:text="Customize Daily Survey"
+        android:layout_below="@id/medicationSettingsButton"
+        android:layout_height="wrap_content"/>
 
-        android:id="@+id/otherPainLocation2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/otherPainLocation"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Other pain location:"
-        android:textSize="15sp" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/treatmentHistoryButton"
+        android:layout_marginHorizontal="20dp"
+        android:text="Treatment History"
+        android:layout_below="@id/customizeDailySurveyButton"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/dateLocationSettingsButton"
+        android:layout_marginHorizontal="20dp"
+        android:text="Date/Location Settings"
+        android:layout_below="@id/treatmentHistoryButton"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/notificationSettings"
+        android:layout_marginHorizontal="20dp"
+        android:text="Notification Settings"
+        android:layout_below="@id/dateLocationSettingsButton"
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:layout_width="match_parent"
