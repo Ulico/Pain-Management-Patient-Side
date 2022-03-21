@@ -18,14 +18,15 @@
     <EditText
         android:id="@+id/username"
         android:layout_width="wrap_content"
+        android:layout_marginHorizontal="50dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/createAccountText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
+        android:maxLength="200"
         android:autofillHints="username"
         android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890@."
         android:ems="10"
-        android:hint="@string/username"
+        android:hint="Email"
         android:inputType="textFilter" />
 
     <EditText
@@ -51,5 +52,14 @@
         android:ems="10"
         android:hint="Confirm password"
         android:inputType="textPassword" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/confirmPassword"
+        android:onClick="onSubmit"
+        android:text="Submit"/>
 
 </RelativeLayout>

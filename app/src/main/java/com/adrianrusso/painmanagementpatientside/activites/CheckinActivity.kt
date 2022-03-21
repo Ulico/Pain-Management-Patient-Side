@@ -17,7 +17,9 @@ import com.google.android.material.snackbar.Snackbar
 
 class CheckinActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCheckinBinding
-    private var painLocation: Pair<Float, Float> = Pair(0F, 0F)
+    private var painLocation: MutableList<Pair<Float, Float>> =
+        mutableListOf(Pair(0F, 0F), Pair(0F, 0F), Pair(0F, 0F))
+    private var clicks = 0
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,13 +36,20 @@ class CheckinActivity : AppCompatActivity() {
 
         binding.bodyDiagram.setOnTouchListener { p0, p1 ->
             if (p1.action == MotionEvent.ACTION_DOWN) {
+
                 require(p1 != null)
 
-                painLocation = Pair(p1.x.div(p0.width), p1.y.div(p0.height))
+                painLocation[clicks % 3] = Pair(p1.x.div(p0.width), p1.y.div(p0.height))
+                clicks++
 
-                binding.circle.visibility = View.VISIBLE
-                binding.circle.x = p1.x - (binding.circle.width * 2) / 3
-                binding.circle.y = p1.y + (binding.circle.height * 2)
+                var circle = binding.circle
+                if (clicks % 3 == 2)
+                    circle = binding.circle2
+                else if (clicks % 3 == 0)
+                    circle = binding.circle3
+                circle.visibility = View.VISIBLE
+                circle.x = p1.x - (circle.width * 2) / 3
+                circle.y = p1.y + (circle.height * 2)
             }
             true
         }
@@ -52,7 +61,7 @@ class CheckinActivity : AppCompatActivity() {
         s.painLevel = binding.painSlider.value.toInt()
 
         Snackbar.make(view, "Pain level submitted", Snackbar.LENGTH_SHORT).show()
-        s.painCoordinates = painLocation
+        s.painCoordinates = painLocation.toList()
         AppUser.sendSubmission(s)
 
     }
@@ -63,5 +72,9 @@ class CheckinActivity : AppCompatActivity() {
 
     fun onExternalFactors(view: View) {
         startActivity(Intent(this, ExternalFactorsScrollingActivity::class.java))
+    }
+
+    fun onTreatmentStrategies(view: View) {
+        startActivity(Intent(this, TreatmentStrategiesScrollingActivity::class.java))
     }
 }

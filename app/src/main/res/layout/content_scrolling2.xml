@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activites.PainDescriptionScrollingActivity"
+    tools:showIn="@layout/activity_external_factors_scrolling">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activites.PainDescriptionActivity">
+
+        <TextView
+            android:id="@+id/externalFactorsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="External Factors:"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/painDescriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Sleep Duration:"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sleepDurationHours"
+                android:layout_marginHorizontal="10dp"
+                android:text="0"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="hours" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sleepDurationMinutes"
+                android:layout_marginHorizontal="10dp"
+                android:text="0"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="minutes" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/sleepQualitySlider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Sleep Quality:"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/sliderLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sleepSlider"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+
+                android:stepSize="1"
+                android:value="5"
+                android:valueFrom="0"
+                android:valueTo="10" />
+
+            <TextView
+                android:id="@+id/sleepLevelRatingText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:text="5/10"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/exerciseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Exercise:"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:id="@+id/exerciseDurationHours"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:text="0"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hours" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/exerciseDurationMinutes"
+                android:layout_marginHorizontal="10dp"
+                android:text="0"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="minutes" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sliderLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/exerciseSlider"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+
+                android:stepSize="1"
+                android:value="5"
+                android:valueFrom="0"
+                android:valueTo="10" />
+
+            <TextView
+                android:id="@+id/exerciseLevelRatingText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:text="5/10"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:translationX="-10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:text="Heavy" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/moodLevelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Mood Level:"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/sliderLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/moodSlider"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+
+                android:stepSize="1"
+                android:value="5"
+                android:valueFrom="0"
+                android:valueTo="10" />
+
+            <TextView
+                android:id="@+id/moodSliderRatingText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:text="5/10"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/bowelMovementText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Bowel Movement:"
+            android:textSize="18sp" />
+
+        <GridLayout
+            android:id="@+id/describePainGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:columnCount="3">
+
+            <CheckBox
+                android:layout_marginHorizontal="10dp"
+                android:text="Yes"
+                android:id="@+id/yes"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:layout_marginHorizontal="10dp"
+                android:text="No"
+                android:id="@+id/no"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:layout_marginHorizontal="10dp"
+                android:text="N/A"
+                android:textSize="14sp" />
+
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/dietText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Diet:"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/dietSliderLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/dietSlider"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+
+                android:stepSize="1"
+                android:value="5"
+                android:valueFrom="0"
+                android:valueTo="10" />
+
+            <TextView
+                android:id="@+id/dietSliderRatingText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:text="5/10"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:translationX="-10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:text="Heavy" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

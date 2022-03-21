@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activites.PainDescriptionScrollingActivity"
+    tools:showIn="@layout/activity_treatment_strategies_scrolling">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activites.TreatmentStrategiesActivity">
+
+        <TextView
+            android:id="@+id/painDescriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Treatment Strategies"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/medicationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Medication:"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="Yes" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="30dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="No" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="N/A" />
+
+        <TextView
+            android:id="@+id/nonMedicationStrategiesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Non Medication Strategies:"
+            android:textSize="18sp" />
+
+        <GridLayout
+            android:id="@+id/describePainGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="30dp"
+            android:columnCount="2">
+
+            <CheckBox
+                android:id="@+id/sleep"
+                android:layout_marginHorizontal="10dp"
+                android:text="Sleep"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/journaled"
+                android:layout_marginHorizontal="10dp"
+                android:text="Journaled"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/physicalTherapy"
+                android:layout_marginHorizontal="10dp"
+                android:text="Physical Therapy"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/shower"
+                android:layout_marginHorizontal="10dp"
+                android:text="Shower"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/yoga"
+                android:layout_marginHorizontal="10dp"
+                android:text="Yoga"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/painTherapy"
+                android:layout_marginHorizontal="10dp"
+                android:text="Pain Therapy"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/meditation"
+                android:layout_marginHorizontal="10dp"
+                android:text="Meditation"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/heatPack"
+                android:layout_marginHorizontal="10dp"
+                android:text="Heat Pack"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/relaxingHobby"
+                android:layout_marginHorizontal="10dp"
+                android:text="Relaxing Hobby"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/exercise"
+                android:layout_marginHorizontal="10dp"
+                android:text="Exercise"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/icePack"
+                android:layout_marginHorizontal="10dp"
+                android:text="Ice Pack"
+                android:textSize="14sp" />
+
+
+        </GridLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

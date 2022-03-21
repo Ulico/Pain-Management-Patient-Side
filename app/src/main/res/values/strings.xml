@@ -130,4 +130,7 @@
     </string>
     <string name="title_activity_external_factors_scrolling">ExternalFactorsScrollingActivity
     </string>
+    <string name="title_activity_treatment_strategies_scorlling">
+        TreatmentStrategiesScorllingActivity
+    </string>
 </resources>

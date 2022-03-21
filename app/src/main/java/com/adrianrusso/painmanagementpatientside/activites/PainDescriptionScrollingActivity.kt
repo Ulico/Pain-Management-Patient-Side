@@ -12,6 +12,7 @@ import com.adrianrusso.painmanagementpatientside.databinding.ActivityPainDescrip
 import com.adrianrusso.painmanagementpatientside.models.AppUser
 import com.adrianrusso.painmanagementpatientside.models.Submission
 import com.google.android.material.slider.Slider
+import java.util.*
 
 class PainDescriptionScrollingActivity : AppCompatActivity() {
 
@@ -117,7 +118,7 @@ class PainDescriptionScrollingActivity : AppCompatActivity() {
             run {
                 if (c != null) {
                     if (c.isChecked) {
-                        tempList.add(c.text.toString())
+                        tempList.add(c.text.toString().lowercase(Locale.getDefault()))
                     }
                 }
             }
@@ -132,7 +133,7 @@ class PainDescriptionScrollingActivity : AppCompatActivity() {
             run {
                 if (c != null) {
                     if (c.isChecked) {
-                        tempList.add(c.text.toString())
+                        tempList.add(c.text.toString().lowercase(Locale.getDefault()))
                     }
                 }
             }
@@ -145,7 +146,7 @@ class PainDescriptionScrollingActivity : AppCompatActivity() {
             run {
                 if (c != null) {
                     if (c.isChecked) {
-                        tempList.add(c.text.toString())
+                        tempList.add(c.text.toString().lowercase(Locale.getDefault()))
                     }
                 }
             }
@@ -158,7 +159,7 @@ class PainDescriptionScrollingActivity : AppCompatActivity() {
             run {
                 if (c != null) {
                     if (c.isChecked) {
-                        tempList.add(c.text.toString())
+                        tempList.add(c.text.toString().lowercase(Locale.getDefault()))
                     }
                 }
             }
@@ -171,7 +172,7 @@ class PainDescriptionScrollingActivity : AppCompatActivity() {
             run {
                 if (c != null) {
                     if (c.isChecked) {
-                        tempList.add(c.text.toString())
+                        tempList.add(c.text.toString().lowercase(Locale.getDefault()))
                     }
                 }
             }
@@ -182,7 +183,7 @@ class PainDescriptionScrollingActivity : AppCompatActivity() {
 
         val hours = binding.content.painDurationHours?.text.toString().toInt()
         val minutes = binding.content.painDurationMinutes?.text.toString().toInt()
-        if (hours != 0 && minutes != 0)
+        if (hours != 0 || minutes != 0)
             s.painDuration = hours * 60 + minutes
 
         AppUser.sendSubmission(s)

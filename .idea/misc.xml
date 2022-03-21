@@ -5,8 +5,10 @@
       <map>
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/drawable/circle.xml" value="0.233" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.2757697456492637" />
+        <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout-w1240dp/content_scrolling3.xml" value="0.2757697456492637" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.27049180327868855" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout-w936dp/content_scrolling2.xml" value="0.30635245901639346" />
+        <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout-w936dp/content_scrolling3.xml" value="0.30635245901639346" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/activity_add_medication.xml" value="0.358695652173913" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/activity_body_diagram.xml" value="0.33" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/activity_checkin.xml" value="0.358695652173913" />
@@ -21,9 +23,12 @@
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/activity_pain_description_scrolling.xml" value="0.3020833333333333" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/activity_provider_settings.xml" value="0.40625" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/activity_sign_up.xml" value="0.40625" />
+        <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/activity_treatment_strategies.xml" value="0.25" />
+        <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/activity_treatment_strategies_scorlling.xml" value="0.40625" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/activity_two_factor_authentication.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/content_scrolling.xml" value="0.31556039173014144" />
+        <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/content_scrolling.xml" value="0.2897617514488088" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/content_scrolling2.xml" value="0.33" />
+        <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/content_scrolling3.xml" value="0.40625" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/fragment_education.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/fragment_gaming.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/adria/AndroidStudioProjects/PainManagementPatientSide/app/src/main/res/layout/fragment_graph.xml" value="0.23020833333333332" />

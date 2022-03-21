@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activites.PainDescriptionScrollingActivity"
-    tools:showIn="@layout/activity_pain_description_scrolling">
+    tools:showIn="@layout/activity_external_factors_scrolling">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:layout_centerHorizontal="true"
             android:layout_margin="10dp"
             android:text="Pain Description"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/painInterferedGeneralQuestion"
@@ -114,67 +114,56 @@
             android:columnCount="2">
 
             <CheckBox
-                android:id="@+id/pounding"
                 android:layout_marginHorizontal="10dp"
                 android:text="Pounding"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/dull"
                 android:layout_marginHorizontal="10dp"
                 android:text="Dull"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/numbness"
                 android:layout_marginHorizontal="10dp"
                 android:text="Numbness"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/throbbing"
                 android:layout_marginHorizontal="10dp"
                 android:text="Throbbing"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/sharp"
                 android:layout_marginHorizontal="10dp"
                 android:text="Sharp"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/pressure"
                 android:layout_marginHorizontal="10dp"
                 android:text="Pressure"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/aching"
                 android:layout_marginHorizontal="10dp"
                 android:text="Aching"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/localized"
                 android:layout_marginHorizontal="10dp"
                 android:text="Localized"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/tingling"
                 android:layout_marginHorizontal="10dp"
                 android:text="Tingling"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/burning"
                 android:layout_marginHorizontal="10dp"
                 android:text="Burning"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/pinching"
                 android:layout_marginHorizontal="10dp"
                 android:text="Pinching"
                 android:textSize="14sp" />
@@ -210,37 +199,31 @@
             android:columnCount="2">
 
             <CheckBox
-                android:id="@+id/stress"
                 android:layout_marginHorizontal="10dp"
                 android:text="Stress"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/clothing"
                 android:layout_marginHorizontal="10dp"
                 android:text="Clothing"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/negativeMood"
                 android:layout_marginHorizontal="10dp"
                 android:text="Negative Mood"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/anxiety"
                 android:layout_marginHorizontal="10dp"
                 android:text="Anxiety"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/weather"
                 android:layout_marginHorizontal="10dp"
                 android:text="Weather"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/allergicReaction"
                 android:layout_marginHorizontal="10dp"
                 android:text="Allergic Reaction"
                 android:textSize="14sp" />
@@ -263,31 +246,26 @@
             android:columnCount="2">
 
             <CheckBox
-                android:id="@+id/caffeine"
                 android:layout_marginHorizontal="10dp"
                 android:text="Caffeine"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/skippedMedication"
                 android:layout_marginHorizontal="10dp"
                 android:text="Skipped Medication"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/smoking"
                 android:layout_marginHorizontal="10dp"
                 android:text="Smoking"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/alcohol"
                 android:layout_marginHorizontal="10dp"
                 android:text="Alcohol"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/skippedMeal"
                 android:layout_marginHorizontal="10dp"
                 android:text="Skipped Meal"
                 android:textSize="14sp" />
@@ -310,51 +288,43 @@
             android:columnCount="2">
 
             <CheckBox
-                android:id="@+id/sitting"
                 android:layout_marginHorizontal="10dp"
                 android:text="Sitting"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/tooMuchSleep"
                 android:layout_marginHorizontal="10dp"
                 android:text="Too much sleep"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/exercise"
                 android:layout_marginHorizontal="10dp"
                 android:text="Exercise"
                 android:textSize="14sp" />
 
 
             <CheckBox
-                android:id="@+id/standing"
                 android:layout_marginHorizontal="10dp"
                 android:text="Standing"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/lackOfSleep"
                 android:layout_marginHorizontal="10dp"
                 android:text="Lack of sleep"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/inactivity"
                 android:layout_marginHorizontal="10dp"
                 android:text="Inactivity"
                 android:textSize="14sp" />
 
 
             <CheckBox
-                android:id="@+id/walking"
                 android:layout_marginHorizontal="10dp"
                 android:text="Walking"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/interruptedSleep"
                 android:layout_marginHorizontal="10dp"
                 android:text="Interrupted Sleep"
                 android:textSize="14sp" />
@@ -377,7 +347,6 @@
             android:gravity="center_horizontal">
 
             <EditText
-                android:id="@+id/painDurationHours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
@@ -390,7 +359,6 @@
                 android:text="hours" />
 
             <EditText
-                android:id="@+id/painDurationMinutes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
@@ -424,25 +392,21 @@
             android:columnCount="2">
 
             <CheckBox
-                android:id="@+id/morning"
                 android:layout_marginHorizontal="10dp"
                 android:text="Morning"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/midday"
                 android:layout_marginHorizontal="10dp"
                 android:text="Midday"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/evening"
                 android:layout_marginHorizontal="10dp"
                 android:text="Evening"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/atNight"
                 android:layout_marginHorizontal="10dp"
                 android:text="At Night"
                 android:textSize="14sp" />
@@ -466,43 +430,36 @@
             android:columnCount="2">
 
             <CheckBox
-                android:id="@+id/atWork"
                 android:layout_marginHorizontal="10dp"
                 android:text="At Work"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/atHome"
                 android:layout_marginHorizontal="10dp"
                 android:text="At Home"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/inBed"
                 android:layout_marginHorizontal="10dp"
                 android:text="In Bed"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/inTransit"
                 android:layout_marginHorizontal="10dp"
                 android:text="In Transit"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/outside"
                 android:layout_marginHorizontal="10dp"
                 android:text="Outside"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/atSchool"
                 android:layout_marginHorizontal="10dp"
                 android:text="At school"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/socialSetting"
                 android:layout_marginHorizontal="10dp"
                 android:text="Social Setting"
                 android:textSize="14sp" />
@@ -522,36 +479,31 @@
             android:id="@+id/otherSymptomsGrid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
             android:layout_marginBottom="30dp"
+            android:layout_marginHorizontal="10dp"
             android:columnCount="2">
 
             <CheckBox
-                android:id="@+id/nausea"
                 android:layout_marginHorizontal="10dp"
                 android:text="Nausea"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/diarrhea"
                 android:layout_marginHorizontal="10dp"
                 android:text="Diarrhea"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/worsePainIfMoving"
                 android:layout_marginHorizontal="10dp"
                 android:text="Worse Pain if Moving"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/lightHeaded"
                 android:layout_marginHorizontal="10dp"
                 android:text="Light headed"
                 android:textSize="14sp" />
 
             <CheckBox
-                android:id="@+id/constipation"
                 android:layout_marginHorizontal="10dp"
                 android:text="Constipation"
                 android:textSize="14sp" />
