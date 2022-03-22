@@ -18,15 +18,23 @@ class GraphFragment : Fragment() {
         "Patient: ${AppUser.name}".also { binding.patientNameText.text = it }
         "Age: ${AppUser.age}".also { binding.patientAgeText.text = it }
 
-        "Most common pain location:\n${AppUser.painLocations[0]}".also {
-            binding.painLocationText.text = it
+        if (AppUser.painLocations.isNotEmpty()) {
+
+            "Most common pain location:\n${AppUser.painLocations[0]}".also {
+                binding.painLocationText.text = it
+            }
         }
-        "Most common treatment used:\n${AppUser.commonTreatments[0]}".also {
-            binding.commonTreatmentText.text = it
+        if (AppUser.commonTreatments.isNotEmpty()) {
+            "Most common treatment used:\n${AppUser.commonTreatments[0]}".also {
+                binding.commonTreatmentText.text = it
+            }
         }
-        "Most alternative treatment used:\n${AppUser.alternativeTreatments[0]}".also {
-            binding.alternativeTreatmentText.text = it
+        if (AppUser.alternativeTreatments.isNotEmpty()) {
+            "Most alternative treatment used:\n${AppUser.alternativeTreatments[0]}".also {
+                binding.alternativeTreatmentText.text = it
+            }
         }
+
         "Notes:\n${AppUser.notes}".also { binding.notesText.text = it }
 
 

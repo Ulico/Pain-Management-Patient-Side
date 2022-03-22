@@ -62,6 +62,8 @@ class MainActivity : AppCompatActivity() {
                 AppUser.loadInfo(user!!)
 
 
+
+
 //                val mongoClient: MongoClient =
 //                    user?.getMongoClient("mongodb-atlas")!! // service for MongoDB Atlas cluster containing custom user data
 //                val mongoDatabase: MongoDatabase =

@@ -72,27 +72,33 @@ object AppUser {
 //            mongoDatabase.getCollection("users-info")!!
         val customUserData: Document? = user.customData
 
-        require(customUserData != null)
+        if (customUserData == null) {
+            firstTimeSetup()
+        } else {
 //        name = customUserData["name"] as String
-        Log.d("Models", customUserData.toString())
-        try {
-            medications = (customUserData["medications"] as MutableList<Document>).map {
-                Medication(
-                    it["name"] as String, it["purpose"] as String, it["dose"] as String,
-                    it["instruction"] as String
-                )
-            }.toMutableList()
-            name = customUserData["name"] as String
-            age = customUserData["age"] as Int
-            status = customUserData["status"] as Boolean
-            providerName = customUserData["provider_name"] as String
-            painLocations = customUserData["pain_locations"] as List<String>
-            commonTreatments = customUserData["common_treatments"] as List<String>
-            alternativeTreatments = customUserData["alternative_treatments"] as List<String>
-            activities = customUserData["activites"] as List<String>
-            notes = customUserData["notes"] as String
-        } catch (e: NullPointerException) {
-            Log.e("Models", e.toString())
+            Log.d("Models", customUserData.toString())
+
+            try {
+                name = customUserData["name"] as String
+                medications = (customUserData["medications"] as MutableList<Document>).map {
+                    Medication(
+                        it["name"] as String, it["purpose"] as String, it["dose"] as String,
+                        it["instruction"] as String
+                    )
+                }.toMutableList()
+
+                age = customUserData["age"] as Int
+                status = customUserData["status"] as Boolean
+                providerName = customUserData["provider_name"] as String
+                painLocations = customUserData["pain_locations"] as List<String>
+                commonTreatments = customUserData["common_treatments"] as List<String>
+                alternativeTreatments = customUserData["alternative_treatments"] as List<String>
+                activities = customUserData["activites"] as List<String>
+                notes = customUserData["notes"] as String
+            } catch (e: NullPointerException) {
+                firstTimeSetup()
+                Log.e("Models", e.toString())
+            }
         }
 //        for (medication in medicationList) {
 //            mongoCollection.findOne(Document("_id", patientId))
@@ -123,31 +129,76 @@ object AppUser {
 //        }
     }
 
+    fun firstTimeSetup() {
+        val mongoClient: MongoClient =
+            mdbUser.getMongoClient("mongodb-atlas")!! // service for MongoDB Atlas cluster containing custom user data
+        val mongoDatabase: MongoDatabase =
+            mongoClient.getDatabase("pain-management-database")!!
+        val mongoCollection: MongoCollection<Document> =
+            mongoDatabase.getCollection("users-info")!!
+        mongoCollection.insertOne(
+            Document("_id", mdbUser.id),
+        ).getAsync { result ->
+            if (result.isSuccess) {
+                Log.v("EXAMPLE", "Inserted custom user data document.")
+
+            } else {
+                Log.e("EXAMPLE", "Unable to update custom user data. Error: ${result.error}")
+            }
+        }
+    }
+
     fun addMedication(m: Medication) {
         medications.add(m)
-//        val mongoClient: MongoClient =
-//            mdbUser.getMongoClient("mongodb-atlas")!! // service for MongoDB Atlas cluster containing custom user data
-//        val mongoDatabase: MongoDatabase =
-//            mongoClient.getDatabase("pain-management-database")!!
-//        val mongoCollection: MongoCollection<Document> =
-//            mongoDatabase.getCollection("users-info")!!
-//        mongoCollection.updateOne(
-//            Document("_id", mdbUser.id),
-//            Document(
-//                "\$set",
-//                Document("medications", medications.map { Document.parse(Gson().toJson(it)) })
-//            )
-//        ).getAsync { result ->
-//            if (result.isSuccess) {
-//                if (result.get().modifiedCount == 1L) {
-//                    Log.v("EXAMPLE", "Updated custom user data document.")
-//                } else {
-//                    Log.v("EXAMPLE", "Could not find custom user data document to update.")
-//                }
-//            } else {
-//                Log.e("EXAMPLE", "Unable to update custom user data. Error: ${result.error}")
-//            }
-//        }
+        val mongoClient: MongoClient =
+            mdbUser.getMongoClient("mongodb-atlas")!! // service for MongoDB Atlas cluster containing custom user data
+        val mongoDatabase: MongoDatabase =
+            mongoClient.getDatabase("pain-management-database")!!
+        val mongoCollection: MongoCollection<Document> =
+            mongoDatabase.getCollection("users-info")!!
+        mongoCollection.updateOne(
+            Document("_id", mdbUser.id),
+            Document(
+                "\$set",
+                Document("medications", medications.map { Document.parse(Gson().toJson(it)) })
+            )
+        ).getAsync { result ->
+            if (result.isSuccess) {
+                if (result.get().modifiedCount == 1L) {
+                    Log.v("EXAMPLE", "Updated custom user data document.")
+                } else {
+                    Log.v("EXAMPLE", "Could not find custom user data document to update.")
+                }
+            } else {
+                Log.e("EXAMPLE", "Unable to update custom user data. Error: ${result.error}")
+            }
+        }
+    }
+
+    fun updateValue(key: String, value: String) {
+        val mongoClient: MongoClient =
+            mdbUser.getMongoClient("mongodb-atlas")!! // service for MongoDB Atlas cluster containing custom user data
+        val mongoDatabase: MongoDatabase =
+            mongoClient.getDatabase("pain-management-database")!!
+        val mongoCollection: MongoCollection<Document> =
+            mongoDatabase.getCollection("users-info")!!
+        mongoCollection.updateOne(
+            Document("_id", mdbUser.id),
+            Document(
+                "\$set",
+                Document(key, value)
+            )
+        ).getAsync { result ->
+            if (result.isSuccess) {
+                if (result.get().modifiedCount == 1L) {
+                    Log.v("EXAMPLE", "Updated custom user data document.")
+                } else {
+                    Log.v("EXAMPLE", "Could not find custom user data document to update.")
+                }
+            } else {
+                Log.e("EXAMPLE", "Unable to update custom user data. Error: ${result.error}")
+            }
+        }
     }
 
 

@@ -36,12 +36,12 @@
             android:gravity="center_horizontal">
 
             <EditText
+                android:id="@+id/sleepDurationHours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/sleepDurationHours"
                 android:layout_marginHorizontal="10dp"
-                android:text="0"
-                android:inputType="number" />
+                android:inputType="number"
+                android:text="0" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -50,12 +50,12 @@
                 android:text="hours" />
 
             <EditText
+                android:id="@+id/sleepDurationMinutes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/sleepDurationMinutes"
                 android:layout_marginHorizontal="10dp"
-                android:text="0"
-                android:inputType="number" />
+                android:inputType="number"
+                android:text="0" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -110,12 +110,12 @@
             android:gravity="center_horizontal">
 
             <EditText
-                android:layout_width="wrap_content"
                 android:id="@+id/exerciseDurationHours"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:text="0"
-                android:inputType="number" />
+                android:inputType="number"
+                android:text="0" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -123,12 +123,12 @@
                 android:text="hours" />
 
             <EditText
+                android:id="@+id/exerciseDurationMinutes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/exerciseDurationMinutes"
                 android:layout_marginHorizontal="10dp"
-                android:text="0"
-                android:inputType="number" />
+                android:inputType="number"
+                android:text="0" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -220,32 +220,33 @@
             android:text="Bowel Movement:"
             android:textSize="18sp" />
 
-        <GridLayout
-            android:id="@+id/describePainGrid"
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:columnCount="3">
+            android:orientation="horizontal">
 
-            <CheckBox
-                android:layout_marginHorizontal="10dp"
-                android:text="Yes"
+            <RadioButton
                 android:id="@+id/yes"
-                android:textSize="14sp" />
-
-            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:text="No"
+                android:text="Yes" />
+
+            <RadioButton
                 android:id="@+id/no"
-                android:textSize="14sp" />
-
-            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:text="N/A"
-                android:textSize="14sp" />
+                android:text="No" />
 
+            <RadioButton
+                android:id="@+id/na"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:text="N/A" />
+        </RadioGroup>
 
-        </GridLayout>
 
         <TextView
             android:id="@+id/dietText"

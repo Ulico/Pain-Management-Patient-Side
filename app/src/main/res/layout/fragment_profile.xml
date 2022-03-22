@@ -23,35 +23,51 @@
         android:contentDescription="@string/logo"
         android:src="@drawable/logo" />
 
-    <TextView
-        android:id="@+id/fullPatientNameText"
+    <LinearLayout
+        android:id="@+id/nameLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:text="Full Patient Name:"
-        android:textSize="15sp" />
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/fullPatientNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingVertical="10dp"
+
+            android:text="Full Patient Name:"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:enabled="false"
+            android:textSize="15sp" />
 
 
-    <TextView
-        android:id="@+id/providerNameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/fullPatientNameText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Provider Name:"
-        android:textSize="15sp" />
+        <ImageButton
+            android:id="@+id/nameEditButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_edit" />
+
+    </LinearLayout>
 
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="20dp"
         android:id="@+id/providerSettingsText"
-        android:text="Provider Settings"
-        android:layout_below="@id/providerNameText"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameLayout"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Provider Settings" />
 
     <Button
         android:id="@+id/medicationSettingsButton"
@@ -62,36 +78,36 @@
         android:text="Medication Settings" />
 
     <Button
-        android:layout_width="match_parent"
         android:id="@+id/customizeDailySurveyButton"
-        android:layout_marginHorizontal="20dp"
-        android:text="Customize Daily Survey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/medicationSettingsButton"
-        android:layout_height="wrap_content"/>
+        android:layout_marginHorizontal="20dp"
+        android:text="Customize Daily Survey" />
 
     <Button
-        android:layout_width="match_parent"
         android:id="@+id/treatmentHistoryButton"
-        android:layout_marginHorizontal="20dp"
-        android:text="Treatment History"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/customizeDailySurveyButton"
-        android:layout_height="wrap_content"/>
+        android:layout_marginHorizontal="20dp"
+        android:text="Treatment History" />
 
     <Button
-        android:layout_width="match_parent"
         android:id="@+id/dateLocationSettingsButton"
-        android:layout_marginHorizontal="20dp"
-        android:text="Date/Location Settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/treatmentHistoryButton"
-        android:layout_height="wrap_content"/>
+        android:layout_marginHorizontal="20dp"
+        android:text="Date/Location Settings" />
 
     <Button
-        android:layout_width="match_parent"
         android:id="@+id/notificationSettings"
-        android:layout_marginHorizontal="20dp"
-        android:text="Notification Settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/dateLocationSettingsButton"
-        android:layout_height="wrap_content"/>
+        android:layout_marginHorizontal="20dp"
+        android:text="Notification Settings" />
 
     <LinearLayout
         android:layout_width="match_parent"
