@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.adrianrusso.painmanagementpatientside.activites.AddMedicationActivity
-import com.adrianrusso.painmanagementpatientside.activites.CheckinActivity
+import com.adrianrusso.painmanagementpatientside.activites.CheckinScrollingActivity
 import com.adrianrusso.painmanagementpatientside.databinding.FragmentWelcomeBinding
 import com.adrianrusso.painmanagementpatientside.models.AppUser
 
@@ -26,7 +26,7 @@ class WelcomeFragment : Fragment() {
             startActivity(
                 Intent(
                     activity,
-                    CheckinActivity::class.java
+                    CheckinScrollingActivity::class.java
                 )
             )
         }

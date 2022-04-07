@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PainManagementPatientSide">
         <activity
+            android:name=".activites.CheckinScrollingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_checkin_scrolling"
+            android:theme="@style/Theme.PainManagementPatientSide.NoActionBar" />
+        <activity
+            android:name=".activites.CreateAccountActivity"
+            android:exported="false" />
+        <activity
             android:name=".activites.TreatmentStrategiesScrollingActivity"
             android:exported="false"
             android:label="Daily Survey"
@@ -35,9 +43,6 @@
             android:exported="false" />
         <activity
             android:name=".activites.EmotionRecordActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activites.CheckinActivity"
             android:exported="false" />
         <activity
             android:name=".activites.NavigationActivity"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.CheckinActivity">
+    tools:context=".activites.CheckinScrollingActivityActivity">
 
     <TextView
         android:id="@+id/dailySurveyText"
@@ -12,13 +12,23 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Daily Survey"
-        android:textSize="48sp" />
+        android:textSize="32sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dailySurveyText"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/bodyDiagramInstructions"
+        android:layout_marginTop="5dp"
+        android:text="Select on the body diagram where you are experiencing pain."
+        android:textSize="14sp" />
 
     <ImageView
         android:id="@+id/bodyDiagram"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_below="@id/dailySurveyText"
+        android:layout_height="250dp"
+        android:layout_below="@id/bodyDiagramInstructions"
         android:layout_centerHorizontal="true"
         android:src="@drawable/bodydiagram" />
 
@@ -126,6 +136,30 @@
 
     <ImageView
         android:id="@+id/circle3"
+
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/circle"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/circle4"
+
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/circle"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/circle5"
+
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/circle"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/circle6"
 
         android:layout_width="30dp"
         android:layout_height="30dp"
