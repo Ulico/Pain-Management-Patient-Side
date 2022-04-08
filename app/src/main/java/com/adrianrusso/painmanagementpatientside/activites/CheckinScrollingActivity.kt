@@ -63,7 +63,7 @@ class CheckinScrollingActivity : AppCompatActivity() {
 
         Snackbar.make(view, "Pain level submitted", Snackbar.LENGTH_SHORT).show()
         s.painCoordinates = painLocation.toList()
-        AppUser.sendSubmission(s)
+        AppUser.sendSubmission(s, true)
 
     }
 

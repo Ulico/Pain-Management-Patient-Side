@@ -189,7 +189,7 @@ class PainDescriptionScrollingActivity : AppCompatActivity() {
         }
 
 
-        AppUser.sendSubmission(s)
+        AppUser.sendSubmission(s, false)
         finish()
     }
 }

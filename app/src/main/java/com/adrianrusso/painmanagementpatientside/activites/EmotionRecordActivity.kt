@@ -41,7 +41,7 @@ class EmotionRecordActivity : AppCompatActivity() {
         s.feelLevel = binding.feelSlider.value.toInt()
         s.treatments = listOf(binding.treatmentsSpinner.selectedItem.toString())
         s.activity = binding.activitesSpinner.selectedItem.toString()
-        AppUser.sendSubmission(s)
+        AppUser.sendSubmission(s, false)
 
         Snackbar.make(view, "Emotion level submitted", Snackbar.LENGTH_SHORT).show()
 

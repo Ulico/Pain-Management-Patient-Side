@@ -74,7 +74,7 @@ class ExternalFactorsScrollingActivity : AppCompatActivity() {
         s.bowelMovement = binding.content.yes?.isChecked
         s.dietAmount = binding.content.dietSlider?.value?.toInt()
 
-        AppUser.sendSubmission(s)
+        AppUser.sendSubmission(s, false)
 
         finish()
     }

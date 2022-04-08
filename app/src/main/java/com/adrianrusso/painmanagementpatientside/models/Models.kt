@@ -27,7 +27,7 @@ object AppUser {
     lateinit var mdbUser: User
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun sendSubmission(s: Submission) {
+    fun sendSubmission(s: Submission, isPain: Boolean) {
         val mongoClient: MongoClient =
             mdbUser.getMongoClient("mongodb-atlas")!! // service for MongoDB Atlas cluster containing custom user data
         val mongoDatabase: MongoDatabase =
@@ -35,14 +35,18 @@ object AppUser {
         val mongoCollection: MongoCollection<Document> =
             mongoDatabase.getCollection("users-info")!!
         Log.d("TEST", s.painDescriptors.toString())
+        val document = Document.parse(Gson().toJson(s)).append("user_id", mdbUser.id).append(
+            "timestamp",
+            DateTimeFormatter.ISO_INSTANT.format(
+                Instant.now()
+            ),
+        ).append("name", name)
+        if (isPain) {
+            document.append("pain_doc", isPain)
+        }
         mongoCollection.insertOne(
+            document
 
-            Document.parse(Gson().toJson(s)).append("user_id", mdbUser.id).append(
-                "timestamp",
-                DateTimeFormatter.ISO_INSTANT.format(
-                    Instant.now()
-                ),
-            ).append("name", name)
         ).getAsync { result ->
             if (result.isSuccess) {
                 Log.v(
@@ -78,14 +82,17 @@ object AppUser {
 
             try {
                 name = customUserData["name"] as String
-                providerName = customUserData["provider_name"] as String
-                painLocations = customUserData["pain_locations"] as List<String>
+
 
             } catch (e: NullPointerException) {
                 throw NullPointerException()
             }
 
             try {
+                painLocations = customUserData["pain_locations"] as List<String>
+                age = customUserData["age"] as Int
+                providerName = customUserData["provider_name"] as String
+
                 medications = (customUserData["medications"] as MutableList<Document>).map {
                     Medication(
                         it["name"] as String, it["purpose"] as String, it["dose"] as String,
@@ -93,7 +100,7 @@ object AppUser {
                     )
                 }.toMutableList()
 
-                age = customUserData["age"] as Int
+
                 status = customUserData["status"] as Boolean
                 commonTreatments = customUserData["common_treatments"] as List<String>
                 alternativeTreatments = customUserData["alternative_treatments"] as List<String>

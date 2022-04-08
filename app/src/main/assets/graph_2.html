@@ -1,0 +1,43 @@
+<html>
+<head>
+    <script src="https://unpkg.com/@mongodb-js/charts-embed-dom@beta"></script>
+</head>
+<style>
+	 #chart1 {
+      width: 300px;
+      height: 200px;
+      margin: 0 auto;
+      border: 1px solid #ccc
+    } 
+</style>
+<body>
+
+<div id="chart1"></div>
+  <!-- <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/charts-pain-management-1-0-fbdoo/embed/charts?id=621d6967-5809-4272-85c2-803f8c2dac77&maxDataAge=3600&theme=light&autoRefresh=true"></iframe> -->
+<script>
+    //import ChartsEmbedSDK from '@mongodb-js/charts-embed-dom';
+
+    const sdk = new ChartsEmbedSDK({
+        baseUrl: 'https://charts.mongodb.com/charts-pain-management-1-0-fbdoo',
+        autoRefresh: true
+      });
+    	var str = "Alex Brown";
+    	// removed const before chart1
+       chart1 = sdk.createChart({ chartId: '621d6967-5809-4272-85c2-803f8c2dac77',
+      	filter: {"name": { "$eq": str} }
+       });
+      //async function renderChart() {
+      //	await chart1.render(document.getElementById('chart1'));
+      //}
+      chart1.render(document.getElementById('chart1'));
+      //renderChart();
+      //chart1.setFilter({"name": { $eq: "Alex Brown"} });
+      //if (chart1.render()) {
+      	//chart1.setFilter({'name': 'Alex Brown'});
+      //}
+      //chart1.setFilter({'name': 'Alex Brown'});
+      //const patientSelect = document.getElementById("patients")
+
+</script>
+</body>
+</html>
