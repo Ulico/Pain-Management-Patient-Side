@@ -15,11 +15,12 @@
         android:textSize="18sp" />
 
     <EditText
+        android:id="@+id/nameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="50dp"
-
         android:layout_marginTop="10dp"
+        android:inputType="textPersonName"
         android:textAlignment="center" />
 
     <TextView
@@ -31,6 +32,7 @@
         android:textSize="18sp" />
 
     <EditText
+        android:id="@+id/dateOfBirthEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="50dp"
@@ -47,8 +49,10 @@
         android:textSize="18sp" />
 
     <EditText
+        android:id="@+id/doctorNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPersonName"
         android:layout_marginHorizontal="50dp"
         android:layout_marginTop="10dp"
         android:textAlignment="center" />
@@ -74,6 +78,7 @@
             android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/painLocationEditText1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
@@ -94,6 +99,7 @@
             android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/painLocationEditText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
@@ -113,6 +119,7 @@
             android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/painLocationEditText3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
@@ -125,6 +132,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:backgroundTint="#F44336"
+        android:onClick="onSubmit"
         android:text="Submit" />
 
 </LinearLayout>

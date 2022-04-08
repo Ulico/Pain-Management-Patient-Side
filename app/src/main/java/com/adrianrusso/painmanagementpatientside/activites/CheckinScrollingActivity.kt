@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
+import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import com.adrianrusso.painmanagementpatientside.databinding.ActivityCheckinBinding
 import com.adrianrusso.painmanagementpatientside.databinding.ActivityCheckinScrollingBinding
@@ -21,6 +22,7 @@ class CheckinScrollingActivity : AppCompatActivity() {
     private var painLocation: MutableList<Pair<Float, Float>> =
         mutableListOf(Pair(0F, 0F), Pair(0F, 0F), Pair(0F, 0F), Pair(0F, 0F), Pair(0F, 0F), Pair(0F, 0F))
     private var clicks = 0
+    private lateinit var circles: Array<ImageView>
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +37,8 @@ class CheckinScrollingActivity : AppCompatActivity() {
             }
         })
 
+        circles = arrayOf(binding.content.circle, binding.content.circle2, binding.content.circle3, binding.content.circle4, binding.content.circle5, binding.content.circle6)
+
         binding.content.bodyDiagram.setOnTouchListener { p0, p1 ->
             if (p1.action == MotionEvent.ACTION_DOWN) {
 
@@ -43,14 +47,7 @@ class CheckinScrollingActivity : AppCompatActivity() {
                 painLocation[clicks % 6] = Pair(p1.x.div(p0.width), p1.y.div(p0.height))
                 clicks++
 
-                var circle = binding.content.circle
-                when {
-                    clicks % 6 == 2 -> circle = binding.content.circle2
-                    clicks % 6 == 3 -> circle = binding.content.circle3
-                    clicks % 6 == 4 -> circle = binding.content.circle4
-                    clicks % 6 == 5 -> circle = binding.content.circle5
-                    clicks % 6 == 0 -> circle = binding.content.circle6
-                }
+                val circle = circles[clicks % 6]
                 circle.visibility = View.VISIBLE
                 circle.x = p1.x - (circle.width * 2) / 3
                 circle.y = p1.y + (circle.height * 2)
@@ -80,5 +77,19 @@ class CheckinScrollingActivity : AppCompatActivity() {
 
     fun onTreatmentStrategies(view: View) {
         startActivity(Intent(this, TreatmentStrategiesScrollingActivity::class.java))
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Snackbar.make(binding.root, "Thank you for submitting!", Snackbar.LENGTH_SHORT).show()
+    }
+
+    fun onClear(view: View) {
+        for (c in circles) {
+            c.visibility = View.INVISIBLE
+            c.x = 0F
+            c.y = 0F
+            painLocation = mutableListOf(Pair(0F, 0F), Pair(0F, 0F), Pair(0F, 0F), Pair(0F, 0F), Pair(0F, 0F), Pair(0F, 0F))
+        }
     }
 }

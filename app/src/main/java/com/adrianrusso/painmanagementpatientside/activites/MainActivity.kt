@@ -12,6 +12,7 @@ import io.realm.mongodb.App
 import io.realm.mongodb.AppConfiguration
 import io.realm.mongodb.Credentials
 import io.realm.mongodb.User
+import java.lang.NullPointerException
 
 lateinit var taskApp: App
 const val appID = "test_app-svywj"
@@ -59,9 +60,13 @@ class MainActivity : AppCompatActivity() {
             if (it.isSuccess) {
                 user = taskApp.currentUser()
 
-                AppUser.loadInfo(user!!)
 
-
+                try {
+                    AppUser.loadInfo(user!!)
+                    startActivity(Intent(this, NavigationActivity::class.java))
+                } catch (e: NullPointerException) {
+                    startActivity(Intent(this, CreateAccountActivity::class.java))
+                }
 
 
 //                val mongoClient: MongoClient =
@@ -113,8 +118,7 @@ class MainActivity : AppCompatActivity() {
 //                    }
 
 
-                val intent = Intent(this, NavigationActivity::class.java)
-                startActivity(intent)
+
             } else {
                 it.error.errorMessage?.let { it1 ->
                     Snackbar.make(

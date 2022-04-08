@@ -181,10 +181,13 @@ class PainDescriptionScrollingActivity : AppCompatActivity() {
             s.painOtherSymptoms = tempList.toList()
         tempList.clear()
 
-        val hours = binding.content.painDurationHours?.text.toString().toInt()
-        val minutes = binding.content.painDurationMinutes?.text.toString().toInt()
-        if (hours != 0 || minutes != 0)
-            s.painDuration = hours * 60 + minutes
+        if (!binding.content.painDurationHours?.text.isNullOrEmpty() && !binding.content.painDurationMinutes?.text.isNullOrEmpty()) {
+            val hours = binding.content.painDurationHours?.text.toString().toInt()
+            val minutes = binding.content.painDurationMinutes?.text.toString().toInt()
+            if (hours != 0 || minutes != 0)
+                s.painDuration = hours * 60 + minutes
+        }
+
 
         AppUser.sendSubmission(s)
         finish()

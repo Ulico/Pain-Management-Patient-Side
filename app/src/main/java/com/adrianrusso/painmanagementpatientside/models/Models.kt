@@ -9,8 +9,6 @@ import io.realm.mongodb.mongo.MongoClient
 import io.realm.mongodb.mongo.MongoCollection
 import io.realm.mongodb.mongo.MongoDatabase
 import org.bson.Document
-import org.bson.types.ObjectId
-import java.lang.NullPointerException
 import java.time.Instant
 import java.time.format.DateTimeFormatter
 
@@ -44,7 +42,7 @@ object AppUser {
                 DateTimeFormatter.ISO_INSTANT.format(
                     Instant.now()
                 ),
-            )
+            ).append("name", name)
         ).getAsync { result ->
             if (result.isSuccess) {
                 Log.v(
@@ -73,13 +71,21 @@ object AppUser {
         val customUserData: Document? = user.customData
 
         if (customUserData == null) {
-            firstTimeSetup()
+            throw NullPointerException()
         } else {
 //        name = customUserData["name"] as String
             Log.d("Models", customUserData.toString())
 
             try {
                 name = customUserData["name"] as String
+                providerName = customUserData["provider_name"] as String
+                painLocations = customUserData["pain_locations"] as List<String>
+
+            } catch (e: NullPointerException) {
+                throw NullPointerException()
+            }
+
+            try {
                 medications = (customUserData["medications"] as MutableList<Document>).map {
                     Medication(
                         it["name"] as String, it["purpose"] as String, it["dose"] as String,
@@ -89,15 +95,12 @@ object AppUser {
 
                 age = customUserData["age"] as Int
                 status = customUserData["status"] as Boolean
-                providerName = customUserData["provider_name"] as String
-                painLocations = customUserData["pain_locations"] as List<String>
                 commonTreatments = customUserData["common_treatments"] as List<String>
                 alternativeTreatments = customUserData["alternative_treatments"] as List<String>
                 activities = customUserData["activites"] as List<String>
                 notes = customUserData["notes"] as String
             } catch (e: NullPointerException) {
-                firstTimeSetup()
-                Log.e("Models", e.toString())
+
             }
         }
 //        for (medication in medicationList) {
@@ -137,7 +140,9 @@ object AppUser {
         val mongoCollection: MongoCollection<Document> =
             mongoDatabase.getCollection("users-info")!!
         mongoCollection.insertOne(
-            Document("_id", mdbUser.id),
+            Document("_id", mdbUser.id.toString()).append("name", name)
+                .append("provider_name", providerName)
+                .append("pain_locations", painLocations),
         ).getAsync { result ->
             if (result.isSuccess) {
                 Log.v("EXAMPLE", "Inserted custom user data document.")
