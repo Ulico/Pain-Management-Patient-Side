@@ -40,10 +40,7 @@ object AppUser {
             DateTimeFormatter.ISO_INSTANT.format(
                 Instant.now()
             ),
-        ).append("name", name)
-        if (isPain) {
-            document.append("pain_doc", isPain)
-        }
+        ).append("name", name).append("pain_doc", isPain)
         mongoCollection.insertOne(
             document
 
