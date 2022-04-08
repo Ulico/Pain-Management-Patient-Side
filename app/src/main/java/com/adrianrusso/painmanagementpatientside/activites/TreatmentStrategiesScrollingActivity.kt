@@ -68,7 +68,7 @@ class TreatmentStrategiesScrollingActivity : AppCompatActivity() {
         if (tempList.isNotEmpty())
             s.nonMedicationStrategies = tempList.toList()
 
-        AppUser.sendSubmission(s)
+        AppUser.sendSubmission(s, false)
 
         finish()
 
