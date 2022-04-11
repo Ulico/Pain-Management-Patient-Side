@@ -67,8 +67,4 @@ class ProfileFragment : Fragment() {
 
         return binding.root
     }
-
-    fun onEdit(v: View) {
-
-    }
 }
