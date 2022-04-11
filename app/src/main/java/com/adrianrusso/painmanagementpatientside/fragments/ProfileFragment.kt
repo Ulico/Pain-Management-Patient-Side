@@ -1,19 +1,18 @@
 package com.adrianrusso.painmanagementpatientside.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.addTextChangedListener
-import androidx.core.widget.doOnTextChanged
+import android.view.inputmethod.InputMethodManager
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import com.adrianrusso.painmanagementpatientside.activites.MainActivity
 import com.adrianrusso.painmanagementpatientside.databinding.FragmentProfileBinding
 import com.adrianrusso.painmanagementpatientside.models.AppUser
+
 
 class ProfileFragment : Fragment() {
     override fun onCreateView(
@@ -33,11 +32,16 @@ class ProfileFragment : Fragment() {
         binding.nameEditText.setText(AppUser.name)
         binding.nameEditButton.setOnClickListener {
             if (binding.nameEditText.isEnabled) {
+                binding.logoutButton.visibility = View.VISIBLE
+                binding.updateButton.visibility = View.VISIBLE
                 binding.nameEditText.isEnabled = false
                 AppUser.name = binding.nameEditText.text.toString()
                 AppUser.updateValue("name", binding.nameEditText.text.toString())
             } else {
                 binding.nameEditText.isEnabled = true
+                binding.nameEditText.requestFocus()
+                binding.logoutButton.visibility = View.INVISIBLE
+                binding.updateButton.visibility = View.INVISIBLE
             }
 
         }

@@ -20,12 +20,6 @@ class SignUpActivity : AppCompatActivity() {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-//        Realm.init(this)
-//        taskApp = App(
-//            AppConfiguration.Builder(appID)
-//                .build()
-//        )
     }
 
     fun onSubmit(view: View) {
