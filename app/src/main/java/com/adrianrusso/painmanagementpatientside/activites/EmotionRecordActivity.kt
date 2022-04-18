@@ -35,7 +35,6 @@ class EmotionRecordActivity : AppCompatActivity() {
             ArrayAdapter(this, android.R.layout.simple_spinner_item, AppUser.activities)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun onSubmit(view: View) {
         val s = Submission()
         s.feelLevel = binding.feelSlider.value.toInt()

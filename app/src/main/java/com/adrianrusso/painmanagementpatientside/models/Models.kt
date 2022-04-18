@@ -10,7 +10,9 @@ import io.realm.mongodb.mongo.MongoCollection
 import io.realm.mongodb.mongo.MongoDatabase
 import org.bson.Document
 import java.time.Instant
+import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 object AppUser {
     var name: String = ""
@@ -25,8 +27,6 @@ object AppUser {
     var notes: String = ""
 
     lateinit var mdbUser: User
-
-    @RequiresApi(Build.VERSION_CODES.O)
     fun sendSubmission(s: Submission, isPain: Boolean) {
         val mongoClient: MongoClient =
             mdbUser.getMongoClient("mongodb-atlas")!! // service for MongoDB Atlas cluster containing custom user data
@@ -34,13 +34,7 @@ object AppUser {
             mongoClient.getDatabase("pain-management-database")!!
         val mongoCollection: MongoCollection<Document> =
             mongoDatabase.getCollection("users-info")!!
-        Log.d("TEST", s.painDescriptors.toString())
-        val document = Document.parse(Gson().toJson(s)).append("user_id", mdbUser.id).append(
-            "timestamp",
-            DateTimeFormatter.ISO_INSTANT.format(
-                Instant.now()
-            ),
-        ).append("name", name).append("pain_doc", isPain)
+        val document = Document.parse(Gson().toJson(s)).append("user_id", mdbUser.id).append("name", name).append("pain_doc", isPain).append("mongo_time", Date())
         mongoCollection.insertOne(
             document
 

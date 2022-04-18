@@ -11,6 +11,7 @@ import com.adrianrusso.painmanagementpatientside.adapters.MedicationPagerAdapter
 import com.adrianrusso.painmanagementpatientside.databinding.ActivityTreatmentStrategiesScrollingBinding
 import com.adrianrusso.painmanagementpatientside.models.AppUser
 import com.adrianrusso.painmanagementpatientside.models.Submission
+import io.realm.mongodb.App
 import java.util.*
 
 class TreatmentStrategiesScrollingActivity : AppCompatActivity() {
@@ -26,6 +27,9 @@ class TreatmentStrategiesScrollingActivity : AppCompatActivity() {
         setContentView(view)
         binding.toolbarLayout.title = title
         binding.content.horizontalScrollView?.adapter = MedicationPagerAdapter(this)
+
+        if (AppUser.medications.isEmpty())
+            binding.content.horizontalScrollView?.visibility = View.GONE
 
         nonMedicationStrategiesCheckboxes = listOf(
             binding.content.sleep,
@@ -47,7 +51,6 @@ class TreatmentStrategiesScrollingActivity : AppCompatActivity() {
         binding.content.horizontalScrollView?.adapter?.notifyDataSetChanged()
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun onSubmit(view: View) {
         val s = Submission()
 

@@ -31,11 +31,6 @@ class CheckinScrollingActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.content.painSlider.addOnChangeListener(Slider.OnChangeListener { _, value, _ ->
-            "${value.toInt()}/10".also {
-                binding.content.painLevelRatingText.text = it
-            }
-        })
 
         circles = arrayOf(binding.content.circle, binding.content.circle2, binding.content.circle3, binding.content.circle4, binding.content.circle5, binding.content.circle6)
 
@@ -56,7 +51,6 @@ class CheckinScrollingActivity : AppCompatActivity() {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun onSubmit(view: View) {
         val s = Submission()
         s.painLevel = binding.content.painSlider.value.toInt()

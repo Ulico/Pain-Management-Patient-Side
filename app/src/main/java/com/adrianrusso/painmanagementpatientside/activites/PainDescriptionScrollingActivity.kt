@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.CheckBox
+import android.widget.RelativeLayout
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.adrianrusso.painmanagementpatientside.R
@@ -13,6 +14,7 @@ import com.adrianrusso.painmanagementpatientside.models.AppUser
 import com.adrianrusso.painmanagementpatientside.models.Submission
 import com.google.android.material.slider.Slider
 import java.util.*
+
 
 class PainDescriptionScrollingActivity : AppCompatActivity() {
 
@@ -23,6 +25,7 @@ class PainDescriptionScrollingActivity : AppCompatActivity() {
     private lateinit var painTimeOfDayCheckboxes: List<CheckBox?>
     private lateinit var painLocationOfPatientsCheckboxes: List<CheckBox?>
     private lateinit var painOtherSymptomsCheckboxes: List<CheckBox?>
+    private var toggled: BooleanArray = booleanArrayOf(false, false, false, false, false, false)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPainDescriptionScrollingBinding.inflate(layoutInflater)
@@ -191,5 +194,59 @@ class PainDescriptionScrollingActivity : AppCompatActivity() {
 
         AppUser.sendSubmission(s, false)
         finish()
+    }
+
+    fun onDescribePain(view: View) {
+        if (toggled[0]) {
+            binding.content.describePainGrid?.visibility = View.GONE
+        } else {
+            binding.content.describePainGrid?.visibility = View.VISIBLE
+        }
+        toggled[0] = !toggled[0]
+    }
+
+    fun onPainTriggers(view: View) {
+        if (toggled[1]) {
+            binding.content.painTriggersGrid?.visibility = View.GONE
+        } else {
+            binding.content.painTriggersGrid?.visibility = View.VISIBLE
+        }
+        toggled[1] = !toggled[1]
+    }
+
+    fun onPainDuration(view: View) {
+        if (toggled[2]) {
+            binding.content.painDurationLayout?.visibility = View.GONE
+        } else {
+            binding.content.painDurationLayout?.visibility = View.VISIBLE
+        }
+        toggled[2] = !toggled[2]
+    }
+
+    fun onTimeOfDay(view: View) {
+        if (toggled[3]) {
+            binding.content.timeOfDayGrid?.visibility = View.GONE
+        } else {
+            binding.content.timeOfDayGrid?.visibility = View.VISIBLE
+        }
+        toggled[3] = !toggled[3]
+    }
+
+    fun onLocation(view: View) {
+        if (toggled[4]) {
+            binding.content.locationGrid?.visibility = View.GONE
+        } else {
+            binding.content.locationGrid?.visibility = View.VISIBLE
+        }
+        toggled[4] = !toggled[4]
+    }
+
+    fun onOtherSymptoms(view: View) {
+        if (toggled[5]) {
+            binding.content.otherSymptomsGrid?.visibility = View.GONE
+        } else {
+            binding.content.otherSymptomsGrid?.visibility = View.VISIBLE
+        }
+        toggled[5] = !toggled[5]
     }
 }

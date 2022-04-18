@@ -96,22 +96,36 @@
                 android:textSize="20sp" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/describePainText"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/sliderLayout2"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="10dp"
-            android:text="Describe your pain:"
-            android:textSize="20sp" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/describePainText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sliderLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="Describe your pain:"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="onDescribePain"
+                android:src="@drawable/ic_drop_down" />
+        </LinearLayout>
+
 
         <GridLayout
             android:id="@+id/describePainGrid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:columnCount="2">
+            android:columnCount="2"
+            android:visibility="gone">
 
             <CheckBox
                 android:id="@+id/pounding"
@@ -182,199 +196,231 @@
 
         </GridLayout>
 
-        <TextView
-            android:id="@+id/painTriggersText"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/describePainGrid"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="10dp"
-            android:layout_marginTop="20dp"
-            android:text="Pain Triggers:"
-            android:textSize="20sp" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/environmentalText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/painTriggersText"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="10dp"
-            android:layout_marginTop="5dp"
-            android:text="Environmental:" />
+            <TextView
+                android:id="@+id/painTriggersText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Pain Triggers:"
+                android:textSize="20sp" />
 
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:columnCount="2">
-
-            <CheckBox
-                android:id="@+id/stress"
-                android:layout_marginHorizontal="10dp"
-                android:text="Stress"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/clothing"
-                android:layout_marginHorizontal="10dp"
-                android:text="Clothing"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/negativeMood"
-                android:layout_marginHorizontal="10dp"
-                android:text="Negative Mood"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/anxiety"
-                android:layout_marginHorizontal="10dp"
-                android:text="Anxiety"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/weather"
-                android:layout_marginHorizontal="10dp"
-                android:text="Weather"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/allergicReaction"
-                android:layout_marginHorizontal="10dp"
-                android:text="Allergic Reaction"
-                android:textSize="14sp" />
-
-
-        </GridLayout>
-
-        <TextView
-            android:id="@+id/consumptionText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginTop="5dp"
-            android:text="Consumption:" />
-
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:columnCount="2">
-
-            <CheckBox
-                android:id="@+id/caffeine"
-                android:layout_marginHorizontal="10dp"
-                android:text="Caffeine"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/skippedMedication"
-                android:layout_marginHorizontal="10dp"
-                android:text="Skipped Medication"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/smoking"
-                android:layout_marginHorizontal="10dp"
-                android:text="Smoking"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/alcohol"
-                android:layout_marginHorizontal="10dp"
-                android:text="Alcohol"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/skippedMeal"
-                android:layout_marginHorizontal="10dp"
-                android:text="Skipped Meal"
-                android:textSize="14sp" />
-
-
-        </GridLayout>
-
-        <TextView
-            android:id="@+id/activityText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginTop="5dp"
-            android:text="Activity:" />
-
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:columnCount="2">
-
-            <CheckBox
-                android:id="@+id/sitting"
-                android:layout_marginHorizontal="10dp"
-                android:text="Sitting"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/tooMuchSleep"
-                android:layout_marginHorizontal="10dp"
-                android:text="Too much sleep"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/exercise"
-                android:layout_marginHorizontal="10dp"
-                android:text="Exercise"
-                android:textSize="14sp" />
-
-
-            <CheckBox
-                android:id="@+id/standing"
-                android:layout_marginHorizontal="10dp"
-                android:text="Standing"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/lackOfSleep"
-                android:layout_marginHorizontal="10dp"
-                android:text="Lack of sleep"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/inactivity"
-                android:layout_marginHorizontal="10dp"
-                android:text="Inactivity"
-                android:textSize="14sp" />
-
-
-            <CheckBox
-                android:id="@+id/walking"
-                android:layout_marginHorizontal="10dp"
-                android:text="Walking"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/interruptedSleep"
-                android:layout_marginHorizontal="10dp"
-                android:text="Interrupted Sleep"
-                android:textSize="14sp" />
-
-        </GridLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/describePainGrid"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="10dp"
-            android:layout_marginTop="20dp"
-            android:text="Pain Duration:"
-            android:textSize="20sp" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="onPainTriggers"
+                android:src="@drawable/ic_drop_down" />
+        </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/painTriggersGrid"
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/environmentalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Environmental:" />
+
+            <GridLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:columnCount="2">
+
+                <CheckBox
+                    android:id="@+id/stress"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Stress"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/clothing"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Clothing"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/negativeMood"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Negative Mood"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/anxiety"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Anxiety"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/weather"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Weather"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/allergicReaction"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Allergic Reaction"
+                    android:textSize="14sp" />
+
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/consumptionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Consumption:" />
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:columnCount="2">
+
+                <CheckBox
+                    android:id="@+id/caffeine"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Caffeine"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/skippedMedication"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Skipped Medication"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/smoking"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Smoking"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/alcohol"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Alcohol"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/skippedMeal"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Skipped Meal"
+                    android:textSize="14sp" />
+
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/activityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Activity:" />
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:columnCount="2">
+
+                <CheckBox
+                    android:id="@+id/sitting"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Sitting"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/tooMuchSleep"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Too much sleep"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/exercise"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Exercise"
+                    android:textSize="14sp" />
+
+
+                <CheckBox
+                    android:id="@+id/standing"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Standing"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/lackOfSleep"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Lack of sleep"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/inactivity"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Inactivity"
+                    android:textSize="14sp" />
+
+
+                <CheckBox
+                    android:id="@+id/walking"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Walking"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/interruptedSleep"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Interrupted Sleep"
+                    android:textSize="14sp" />
+
+            </GridLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/painDurationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sliderLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="Pain Duration:"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="onPainDuration"
+                android:src="@drawable/ic_drop_down" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/painDurationLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:visibility="gone">
 
             <EditText
                 android:id="@+id/painDurationHours"
@@ -403,15 +449,29 @@
                 android:text="minutes" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/timeOfDayText"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/sliderLayout2"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="10dp"
-            android:text="Time of Day:"
-            android:textSize="20sp" />
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/timeOfDayText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sliderLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="Time of Day:"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="onTimeOfDay"
+                android:src="@drawable/ic_drop_down" />
+        </LinearLayout>
+
 
         <GridLayout
             android:id="@+id/timeOfDayGrid"
@@ -419,9 +479,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/describePainText"
             android:layout_centerHorizontal="true"
-
             android:layout_marginHorizontal="10dp"
-            android:columnCount="2">
+
+            android:columnCount="2"
+            android:visibility="gone">
 
             <CheckBox
                 android:id="@+id/morning"
@@ -450,20 +511,35 @@
 
         </GridLayout>
 
-        <TextView
-            android:id="@+id/locationText"
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Location:"
-            android:textSize="20sp" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/locationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Location:"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="onLocation"
+                android:src="@drawable/ic_drop_down" />
+        </LinearLayout>
+
 
         <GridLayout
             android:id="@+id/locationGrid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:columnCount="2">
+            android:columnCount="2"
+            android:visibility="gone">
 
             <CheckBox
                 android:id="@+id/atWork"
@@ -510,13 +586,26 @@
 
         </GridLayout>
 
-        <TextView
-            android:id="@+id/otherSymptomsText"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Other Symptoms:"
-            android:textSize="20sp" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/otherSymptomsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Other Symptoms:"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="onOtherSymptoms"
+                android:src="@drawable/ic_drop_down" />
+        </LinearLayout>
+
 
         <GridLayout
             android:id="@+id/otherSymptomsGrid"
@@ -524,7 +613,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginBottom="30dp"
-            android:columnCount="2">
+            android:columnCount="2"
+            android:visibility="gone">
 
             <CheckBox
                 android:id="@+id/nausea"

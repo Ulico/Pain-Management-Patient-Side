@@ -33,7 +33,6 @@ class ProfileFragment : Fragment() {
         binding.nameEditButton.setOnClickListener {
             if (binding.nameEditText.isEnabled) {
                 binding.logoutButton.visibility = View.VISIBLE
-                binding.updateButton.visibility = View.VISIBLE
                 binding.nameEditText.isEnabled = false
                 AppUser.name = binding.nameEditText.text.toString()
                 AppUser.updateValue("name", binding.nameEditText.text.toString())
@@ -41,7 +40,6 @@ class ProfileFragment : Fragment() {
                 binding.nameEditText.isEnabled = true
                 binding.nameEditText.requestFocus()
                 binding.logoutButton.visibility = View.INVISIBLE
-                binding.updateButton.visibility = View.INVISIBLE
             }
 
         }

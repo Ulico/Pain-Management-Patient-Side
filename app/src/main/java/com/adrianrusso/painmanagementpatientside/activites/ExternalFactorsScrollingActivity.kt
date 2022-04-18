@@ -41,11 +41,6 @@ class ExternalFactorsScrollingActivity : AppCompatActivity() {
             }
         })
 
-        binding.content.moodSlider?.addOnChangeListener(Slider.OnChangeListener { _, value, _ ->
-            "${value.toInt()}/10".also {
-                binding.content.moodSliderRatingText!!.text = it
-            }
-        })
 
         binding.content.dietSlider?.addOnChangeListener(Slider.OnChangeListener { _, value, _ ->
             "${value.toInt()}/10".also {
@@ -54,7 +49,6 @@ class ExternalFactorsScrollingActivity : AppCompatActivity() {
         })
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun onSubmit(view: View) {
         val s = Submission()
 
@@ -70,8 +64,6 @@ class ExternalFactorsScrollingActivity : AppCompatActivity() {
 
         s.sleepQuality = binding.content.sleepSlider?.value?.toInt()
         s.exerciseIntensity = binding.content.exerciseSlider?.value?.toInt()
-        s.moodLevel = binding.content.moodSlider?.value?.toInt()
-        s.bowelMovement = binding.content.yes?.isChecked
         s.dietAmount = binding.content.dietSlider?.value?.toInt()
 
         AppUser.sendSubmission(s, false)
