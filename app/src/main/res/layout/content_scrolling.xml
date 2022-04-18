@@ -220,6 +220,7 @@
             android:id="@+id/painTriggersGrid"
             android:layout_width="wrap_content"
             android:orientation="vertical"
+            android:visibility="gone"
             android:layout_height="wrap_content">
 
             <TextView
