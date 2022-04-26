@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PainManagementPatientSide">
         <activity
+            android:name=".activites.LearnPage4"
+            android:exported="false" />
+        <activity
+            android:name=".activites.LearnPage3"
+            android:exported="false" />
+        <activity
+            android:name=".activites.LearnPage2"
+            android:exported="false" />
+        <activity
+            android:name=".activites.LearnPage1"
+            android:exported="false" />
+        <activity
             android:name=".activites.CheckinScrollingActivity"
             android:exported="false"
             android:label="@string/title_activity_checkin_scrolling"
