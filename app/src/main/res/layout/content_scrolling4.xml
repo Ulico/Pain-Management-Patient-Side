@@ -14,18 +14,9 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/dailySurveyText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="Daily Survey"
-            android:textSize="32sp" />
-
-        <TextView
             android:id="@+id/bodyDiagramInstructions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/dailySurveyText"
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="15dp"

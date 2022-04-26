@@ -30,7 +30,7 @@ class CheckinScrollingActivity : AppCompatActivity() {
         binding = ActivityCheckinScrollingBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
+        binding.toolbarLayout.title = "Daily Survey"
 
         circles = arrayOf(binding.content.circle, binding.content.circle2, binding.content.circle3, binding.content.circle4, binding.content.circle5, binding.content.circle6)
 
