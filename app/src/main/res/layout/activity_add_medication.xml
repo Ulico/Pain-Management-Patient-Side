@@ -8,25 +8,6 @@
     tools:context=".activites.AddMedicationActivity">
 
     <TextView
-        android:id="@+id/conditionText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:gravity="center"
-        android:text="Name of condition"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/conditionInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="80dp"
-        android:layout_marginTop="20dp"
-        android:autofillHints="name"
-        android:hint="Type something..."
-        android:inputType="text" />
-
-    <TextView
         android:id="@+id/medicineText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -11,7 +11,7 @@ import com.adrianrusso.painmanagementpatientside.models.AppUser
 import com.adrianrusso.painmanagementpatientside.models.Medication
 
 
-class MedicationPagerAdapter(private val mContext: Context) : PagerAdapter() {
+class GraphPagerAdapter(private val mContext: Context) : PagerAdapter() {
 
 
     override fun instantiateItem(collection: ViewGroup, position: Int): Any {

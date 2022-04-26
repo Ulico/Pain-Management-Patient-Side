@@ -31,14 +31,6 @@ class WelcomeFragment : Fragment() {
             )
         }
 
-        binding.addTreatmentButton.setOnClickListener {
-            startActivity(
-                Intent(
-                    activity,
-                    AddMedicationActivity::class.java
-                )
-            )
-        }
 
         return binding.root
     }

@@ -134,4 +134,5 @@
         TreatmentStrategiesScorllingActivity
     </string>
     <string name="title_activity_checkin_scrolling">CheckinScrollingActivity</string>
+    <string name="title_activity_graph_scrolling">GraphScrollingActivity</string>
 </resources>

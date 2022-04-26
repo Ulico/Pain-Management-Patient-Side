@@ -84,10 +84,10 @@ object AppUser {
                 age = customUserData["age"] as Int
                 providerName = customUserData["provider_name"] as String
 
+                Log.d("Models", customUserData["medications"].toString())
                 medications = (customUserData["medications"] as MutableList<Document>).map {
                     Medication(
-                        it["name"] as String, it["purpose"] as String, it["dose"] as String,
-                        it["instruction"] as String
+                        it["name"] as String, it["dose"] as String, it["instruction"] as String,
                     )
                 }.toMutableList()
 
@@ -239,7 +239,6 @@ class Submission {
 
 data class Medication(
     var name: String,
-    var purpose: String,
     var dose: String,
     var instruction: String
 )

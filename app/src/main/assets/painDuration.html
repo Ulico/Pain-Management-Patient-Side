@@ -8,7 +8,8 @@
       height:300px;
       margin: 0 auto;
       border: 1px solid #ccc
-    } 
+    }
+
 </style>
 <body>
 
@@ -29,16 +30,18 @@
         return Android.insertID();
       }
       str = loadstr();
+      //str = "Anissa"
 
       if (str === "") {
-        chart1 = sdk.createChart({ chartId: '624f9e58-d0f0-4321-8483-b64b207e9fde',
+        chart1 = sdk.createChart({ chartId: '625b24e5-08a7-4713-8138-548029f14b9d',
         //chart1 = sdk.createChart({ chartId: '624cd000-7ad8-40cc-8dd7-21b9a12d2d2e',
         //filter: {"name": { "$eq": str} }
         //filter: {"user_id": { "$eq": "623be7c30c2b3ba9a70193f3"} }
        });  
       } else {
+
         //chart1 = sdk.createChart({ chartId: '624cd000-7ad8-40cc-8dd7-21b9a12d2d2e',
-        chart1 = sdk.createChart({chartId: '624f9e58-d0f0-4321-8483-b64b207e9fde',
+        chart1 = sdk.createChart({chartId: '625b24e5-08a7-4713-8138-548029f14b9d',
         //filter: {"name": { "$eq": str} }
           filter: {"user_id": { "$eq": str} }
           });

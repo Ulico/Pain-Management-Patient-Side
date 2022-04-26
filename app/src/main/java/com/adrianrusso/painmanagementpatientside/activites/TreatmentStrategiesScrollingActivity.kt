@@ -1,12 +1,17 @@
 package com.adrianrusso.painmanagementpatientside.activites
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.widget.CheckBox
+import android.widget.LinearLayout
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.setMargins
+import com.adrianrusso.painmanagementpatientside.adapters.MedicationListAdapter
 import com.adrianrusso.painmanagementpatientside.adapters.MedicationPagerAdapter
 import com.adrianrusso.painmanagementpatientside.databinding.ActivityTreatmentStrategiesScrollingBinding
 import com.adrianrusso.painmanagementpatientside.models.AppUser
@@ -26,10 +31,15 @@ class TreatmentStrategiesScrollingActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         binding.toolbarLayout.title = title
-        binding.content.horizontalScrollView?.adapter = MedicationPagerAdapter(this)
+//        binding.content.horizontalScrollView?.adapter = MedicationPagerAdapter(this)
 
-        if (AppUser.medications.isEmpty())
-            binding.content.horizontalScrollView?.visibility = View.GONE
+        binding.content.listView?.adapter = MedicationListAdapter(this)
+//        val temp = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 150 * AppUser.medications.size)
+//        temp.setMargins(20)
+//        binding.content.listView?.layoutParams = temp
+
+//        if (AppUser.medications.isEmpty())
+//            binding.content.horizontalScrollView?.visibility = View.GONE
 
         nonMedicationStrategiesCheckboxes = listOf(
             binding.content.sleep,
@@ -46,15 +56,9 @@ class TreatmentStrategiesScrollingActivity : AppCompatActivity() {
         )
     }
 
-    override fun onResume() {
-        super.onResume()
-        binding.content.horizontalScrollView?.adapter?.notifyDataSetChanged()
-    }
-
     fun onSubmit(view: View) {
         val s = Submission()
 
-        s.medicationTaken = binding.content.yes?.isChecked
 
         val tempList: MutableList<String> = mutableListOf()
 
@@ -75,5 +79,22 @@ class TreatmentStrategiesScrollingActivity : AppCompatActivity() {
 
         finish()
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (binding.content.listView?.adapter as MedicationListAdapter).notifyDataSetChanged()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val temp = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 150 * AppUser.medications.size)
+        temp.setMargins(20)
+        binding.content.listView?.layoutParams = temp
+    }
+
+    fun onAdd(view: View) {
+        Log.d("Models", AppUser.medications.toString())
+        startActivity(Intent(this, AddMedicationActivity::class.java))
     }
 }

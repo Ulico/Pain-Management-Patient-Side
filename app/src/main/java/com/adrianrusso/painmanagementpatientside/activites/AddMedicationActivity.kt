@@ -24,7 +24,6 @@ class AddMedicationActivity : AppCompatActivity() {
         AppUser.addMedication(
             Medication(
                 binding.medicineInput.text.toString(),
-                binding.conditionInput.text.toString(),
                 binding.doseInput.text.toString(),
                 binding.instructionInput.text.toString()
             )
